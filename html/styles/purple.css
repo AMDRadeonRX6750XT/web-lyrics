@@ -1,0 +1,11 @@
+/* https://github.com/AMDRadeonRX6750XT/web-lyrics */
+
+body {
+	background: linear-gradient(#222222 10%, #6a0bc2);
+	color: #cccccc;
+	font-family: Arial, Helvetica, sans-serif;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}

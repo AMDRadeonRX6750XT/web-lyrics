@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
-	<link rel="stylesheet" href="/style.css">
+	<link rel="stylesheet" href="styles/dark.css">
+	<link rel="stylesheet" href="styles/dark.css" id="theme-style">
 	<title>web-lyrics!</title>
 </head>
 <body>
@@ -16,6 +17,9 @@
 		</h1>
 	</div>
 	<!--<button onclick="audioStart();">Start music (may be loud)</button>-->
+	<button onclick="switchTheme('light')">Light Theme</button>
+	<button onclick="switchTheme('dark')">Dark Theme</button>
+	<button onclick="switchTheme('purple')">Purple Theme</button>
 	<br> <br>
 	<audio controls preload="auto" id="audio_song">
 		<source src="/song.mp3" type="audio/mpeg">

@@ -1,7 +1,7 @@
 /* https://github.com/AMDRadeonRX6750XT/web-lyrics */
 
 body {
-	background: linear-gradient(#222222 10%, #6a0bc2);
+	background: linear-gradient(#222222 10%, #444444);
 	color: #cccccc;
 	font-family: Arial, Helvetica, sans-serif;
 	margin-left: 10%;
@@ -59,6 +59,11 @@ audio::-webkit-media-controls-panel {
 	user-select: none; /* Standard syntax */
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
+}
+
+.lyrics_text:hover {
+	transition: 0.5s;
+	color:#8400ff;
 }
 
 

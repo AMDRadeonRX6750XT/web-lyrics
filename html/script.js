@@ -114,4 +114,24 @@ audioElement.addEventListener("seeked", () => {
 });
 
 
+
+
+function switchTheme(theme) {
+	const themeLink = document.getElementById("theme-style");
+	
+	switch (theme) { // why even bother and not just use `styles/${theme}`
+	case 'light':
+		themeLink.href = "styles/light.css";
+		break;
+	case 'dark':
+		themeLink.href = "styles/dark.css";
+		break;
+	case 'purple':
+		themeLink.href = "styles/purple.css";
+		break;
+	 default:
+		themeLink.href = "styles/dark.css"; // default to dark theme
+	}
+}
+
 main();
