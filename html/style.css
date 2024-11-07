@@ -16,6 +16,18 @@ button {
 	padding: 2%;
 }
 
+
+.github-link {
+	float: right;
+	white-space: nowrap;
+}
+
+@media (max-width: 512px) {
+	.github-link {
+		float: none;
+	}
+}
+
 audio {
 	width: 100%;
 }

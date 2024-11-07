@@ -15,4 +15,4 @@ python -m pip install Flask
 # Todo
 - [x] skip to time when clicking on lyrics
 - [ ] check if the amount of timestamps equal the amount of lyrics
-- [ ] proper mobile support
+- [x] proper mobile support
