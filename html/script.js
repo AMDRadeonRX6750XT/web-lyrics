@@ -8,6 +8,7 @@
 
 console.log("script.js");
 
+const audioElement = document.getElementById('audio_song');
 
 let lyrics = [];
 let timestamps = [];
@@ -38,7 +39,7 @@ async function main() {
 	console.log("main();");
 
 	// Wait for both loadLyrics and loadTimestamps to complete
-	const [lyrics, timestamps] = await Promise.all([loadLyrics(), loadTimestamps()]);
+	[lyrics, timestamps] = await Promise.all([loadLyrics(), loadTimestamps()]);
 
 	// Check if both data are available before logging them
 	if (lyrics && timestamps) {
@@ -52,10 +53,15 @@ async function main() {
 	let i = 0
 	lyrics.forEach(lyricString => {
 		let p = document.createElement("p");
+		p.setAttribute("id_int", i)
 		p.innerHTML = `<strong>${lyricString}</strong>`
 		p.className = "lyrics_text"
 		p.id = `lyrics_text-${i}`
 		//p.style = "margin: 0;"
+		p.addEventListener("click", (event) => {
+			console.log("debug:", timestamps[Number(p.getAttribute("id_int"))])
+			audioElement.currentTime = timestamps[Number(p.getAttribute("id_int"))];
+		})
 		div.append(p);
 		i++;
 	});
@@ -64,7 +70,6 @@ async function main() {
 
 
 
-const audioElement = document.getElementById('audio_song');
 function audioStart() {
 	var promise = audioElement.play();
 
@@ -79,22 +84,51 @@ function audioStart() {
 }
 
 function onAudioTimeUpdate() {
+	audioElement.muted = true // DEBUG
 	const currentTime = audioElement.currentTime;
-	console.log("song time:", currentTime);
-	console.log(lyrics[1])
+	//console.log("song time:", currentTime);
+
+	let currentTimestamp = -1;
+	let index = -1;
+	while (currentTimestamp < currentTime) {
+		index++;
+		currentTimestamp = timestamps[index]
+	}
+	//console.log(index, currentTime)
+	for (let i = index; i != -1; i--) {
+		var lyricElement = document.getElementById(`lyrics_text-${i}`);
+		lyricElement.style.color = "#000000"
+		lyricElement.style.fontSize = ""
+	}
+	for (let i = index; i < lyrics.length; i++) {
+		var lyricElement = document.getElementById(`lyrics_text-${i}`);
+		lyricElement.style.color = "#bbbbbb"
+		lyricElement.style.fontSize = ""
+	}
+	var lyricElement = document.getElementById(`lyrics_text-${index}`);
+	lyricElement.style.color = "#ffffff"
+	lyricElement.style.fontSize = "20px"
+	
+	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
+	if (lyricElement) {
+		//lyricElement.scrollIntoView() // doesn't only do it in the div
+	}
 }
 
 audioElement.addEventListener("timeupdate", onAudioTimeUpdate);
+audioElement.addEventListener("seeked", () => {
+	console.log("Skip completed to:", audioElement.currentTime);
+});
+
 
 main();
 
 
 
-//var lyricElement = document.getElementById('lyrics_text-1');
-//lyricElement.style.color = "#bbbbbb"
+
 
 let array = document.getElementsByClassName("lyrics_text")
 
-document.getElementById('lyrics_box')
+document.getElementById("lyrics_box")
 
 // element.scrollTo()

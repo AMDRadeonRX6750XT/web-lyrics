@@ -13,4 +13,6 @@ python3 -m http.server 8080 -d html
 ```
 
 # Todo
+- [ ] skip to time when clicking on lyrics
+- [ ] check if the amount of timestamps equal the amount of lyrics
 - [ ] proper mobile support
