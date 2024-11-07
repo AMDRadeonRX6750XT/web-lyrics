@@ -5,12 +5,12 @@ Synchronized lyrics with the music in the browser.
 # How to use
 1. Add a song in html/song.mp3
 2. Add lyrics to html/lyrics.json (as a array of strings, not a dictionary)
-3. Add time stamps to html/timestamps.json (as a array of numbers)
-4. Start a server
+3. Add time stamps to html/timestamps.json (as a array of numbers corresponding to the lyric)
+4. Install the server
 ```bash
-python3 -m http.server 8080 -d html
-# only 'python' for Windows
+python -m pip install Flask
 ```
+5. Run server.py
 
 # Todo
 - [x] skip to time when clicking on lyrics
