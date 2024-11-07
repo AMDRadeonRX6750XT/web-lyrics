@@ -3,9 +3,52 @@
 body {
 	background: linear-gradient(#222222 10%, #6a0bc2);
 	color: #cccccc;
-	font-family: Arial, Helvetica, sans-serif;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 2%;
-	margin-bottom: 2%;
 }
+
+button {
+	background-color: #222222;
+	color: #cccccc;
+	padding: 2%;
+}
+
+audio::-webkit-media-controls-panel {
+	background-color: #aaaaaa;
+}
+
+
+.lyrics_box {
+	border: 5px solid black;
+	border-radius: 10px;
+	background-color: #8a2be2;
+}
+
+.lyrics_text {
+	transition: 2s;
+	color: #bbbbbb;
+}
+
+.lyrics_text:hover {
+	transition: 0.5s;
+	color:#8400ff;
+}
+
+
+/* ++ scrollbar */
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #6a0bc2;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #222222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #444444;
+}
+
+/* -- scrollbar */

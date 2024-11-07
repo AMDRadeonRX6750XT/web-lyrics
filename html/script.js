@@ -88,19 +88,20 @@ function onAudioTimeUpdate() {
 	}
 	index-- // idk why but it works so
 	//console.log(index, currentTime)
+	for (let i = 0; i < lyrics.length; i++) {
+		var lyricElement = document.getElementById(`lyrics_text-${i}`);
+		lyricElement.classList.remove("past", "current", "future");
+	}
 	for (let i = index; i != -1; i--) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
-		lyricElement.style.color = "#000000"
-		lyricElement.style.fontSize = ""
+		lyricElement.classList.add("past");
 	}
 	for (let i = index; i < lyrics.length; i++) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
-		lyricElement.style.color = "#bbbbbb"
-		lyricElement.style.fontSize = ""
+		currentLyric.classList.add("current");
 	}
 	var lyricElement = document.getElementById(`lyrics_text-${index}`);
-	lyricElement.style.color = "#ffffff"
-	lyricElement.style.fontSize = "18px"
+	lyricElement.classList.add("future");
 	
 	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
 	if (lyricElement) {

@@ -19,18 +19,17 @@ audio::-webkit-media-controls-panel {
 .lyrics_box {
 	border: 5px solid black;
 	border-radius: 10px;
-	background-color: #8a2be2;
+	background-color: #000000;
 }
 
 .lyrics_text {
 	transition: 2s;
 	color: #bbbbbb;
-	cursor: default;
 }
 
 .lyrics_text:hover {
 	transition: 0.5s;
-	color:#8400ff;
+	color:#888888;
 }
 
 
@@ -41,7 +40,7 @@ audio::-webkit-media-controls-panel {
 }
 
 ::-webkit-scrollbar-track {
-	background: #6a0bc2;
+	background: #444444;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -49,7 +48,7 @@ audio::-webkit-media-controls-panel {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #444444;
+	background: #111111;
 }
 
 /* -- scrollbar */
