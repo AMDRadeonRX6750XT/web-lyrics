@@ -1,11 +1,4 @@
 /* https://github.com/AMDRadeonRX6750XT/web-lyrics */
-
-
-//while (document.readyState != "complete") {}  // js sucks
-
-
-
-
 console.log("script.js");
 
 const audioElement = document.getElementById('audio_song');
@@ -13,7 +6,7 @@ const audioElement = document.getElementById('audio_song');
 let lyrics = [];
 let timestamps = [];
 
-// gpt did the loading thing it sucks really
+// + chatgpt did the loading thing it sucks really
 async function loadLyrics() {
 	try {
 		const response = await fetch("lyrics.json");
@@ -34,6 +27,7 @@ async function loadTimestamps() {
 		return null;  // In case of error, return null or handle as needed
 	}
 }
+// -
 
 async function main() {
 	console.log("main();");
@@ -43,7 +37,7 @@ async function main() {
 
 	// Check if both data are available before logging them
 	if (lyrics && timestamps) {
-		console.log("Loaded data.")
+		console.log("Loaded data successfully.")
 		//console.log("Timestamps:", timestamps);
 	} else {
 		console.log("Failed to load data.");
@@ -92,8 +86,8 @@ function onAudioTimeUpdate() {
 		index++;
 		currentTimestamp = timestamps[index]
 	}
-	index--
-	console.log(index, currentTime)
+	index-- // idk why but it works so
+	//console.log(index, currentTime)
 	for (let i = index; i != -1; i--) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
 		lyricElement.style.color = "#000000"
@@ -110,24 +104,14 @@ function onAudioTimeUpdate() {
 	
 	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
 	if (lyricElement) {
-		//lyricElement.scrollIntoView() // doesn't only do it in the div
+		//lyricElement.scrollIntoView() // TODO: doesn't only do it in the div
 	}
 }
 
 audioElement.addEventListener("timeupdate", onAudioTimeUpdate);
 audioElement.addEventListener("seeked", () => {
-	console.log("Skip completed to:", audioElement.currentTime);
+	// console.log("Skip completed to:", audioElement.currentTime);
 });
 
 
 main();
-
-
-
-
-
-let array = document.getElementsByClassName("lyrics_text")
-
-document.getElementById("lyrics_box")
-
-// element.scrollTo()
