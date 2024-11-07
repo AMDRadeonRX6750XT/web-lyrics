@@ -5,14 +5,19 @@ import os
 
 app = Flask(__name__)
 
+@app.route('/', defaults={'filename': ''})
 @app.route('/<path:filename>')
 def serve_file(filename):
+	print(filename)
 	# Specify the directory to serve from
 	directory = os.path.join(os.getcwd(), "html")
 	
 	# Handle audio range requests for MP3 files
 	if filename.endswith('.mp3'):
 		return serve_audio(filename, directory)
+	if not filename:
+		print(filename)
+		filename = "index.html"
 	
 	# Default case: serve static files like python's HTTP server
 	return send_from_directory(directory, filename)
@@ -45,5 +50,4 @@ def serve_audio(filename, directory):
 	return send_from_directory(directory, filename)
 
 if __name__ == '__main__':
-	print("http://localhost/index.html")
-	app.run(debug=True, threaded=True)
+	app.run(debug=True, host="0.0.0.0")#, threaded=True)
