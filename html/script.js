@@ -59,7 +59,7 @@ async function main() {
 		p.id = `lyrics_text-${i}`
 		//p.style = "margin: 0;"
 		p.addEventListener("click", (event) => {
-			audioElement.currentTime = timestamps[Number(p.getAttribute("id_int")) - 1];
+			audioElement.currentTime = timestamps[Number(p.getAttribute("id_int"))];
 		})
 		div.append(p);
 		i++;
@@ -92,7 +92,8 @@ function onAudioTimeUpdate() {
 		index++;
 		currentTimestamp = timestamps[index]
 	}
-	//console.log(index, currentTime)
+	index--
+	console.log(index, currentTime)
 	for (let i = index; i != -1; i--) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
 		lyricElement.style.color = "#000000"
