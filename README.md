@@ -10,9 +10,10 @@ Synchronized lyrics with the music in the browser.
 ```bash
 python -m pip install Flask
 ```
-5. Run server.py
+5. Run server.py (from the directory)
 
 # Todo
 - [x] skip to time when clicking on lyrics
 - [ ] check if the amount of timestamps equal the amount of lyrics
 - [x] proper mobile support
+- [ ] screenshots for readme
