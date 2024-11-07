@@ -44,6 +44,9 @@ audio::-webkit-media-controls-panel {
 	margin-top: 2%;
 	margin-bottom: 2%;
 	cursor: default;
+	user-select: none; /* Standard syntax */
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
 }
 
 
