@@ -59,8 +59,7 @@ async function main() {
 		p.id = `lyrics_text-${i}`
 		//p.style = "margin: 0;"
 		p.addEventListener("click", (event) => {
-			console.log("debug:", timestamps[Number(p.getAttribute("id_int"))])
-			audioElement.currentTime = timestamps[Number(p.getAttribute("id_int"))];
+			audioElement.currentTime = timestamps[Number(p.getAttribute("id_int")) - 1];
 		})
 		div.append(p);
 		i++;
@@ -84,7 +83,6 @@ function audioStart() {
 }
 
 function onAudioTimeUpdate() {
-	audioElement.muted = true // DEBUG
 	const currentTime = audioElement.currentTime;
 	//console.log("song time:", currentTime);
 
@@ -107,7 +105,7 @@ function onAudioTimeUpdate() {
 	}
 	var lyricElement = document.getElementById(`lyrics_text-${index}`);
 	lyricElement.style.color = "#ffffff"
-	lyricElement.style.fontSize = "20px"
+	lyricElement.style.fontSize = "18px"
 	
 	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
 	if (lyricElement) {
