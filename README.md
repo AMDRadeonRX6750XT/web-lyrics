@@ -19,6 +19,7 @@ python -m pip install Flask
 - [ ] screenshots for readme
 - [ ] accessibility
 - [ ] scroll div automatically to lyrics dynamically
+- [ ] song selection
 
 # Credits
 me, main contributor - https://github.com/AMDRadeonRX6750XT <br>
