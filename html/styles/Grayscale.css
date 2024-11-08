@@ -1,17 +1,3 @@
-:root {
-	--primary-bg: #1e1e1e;             /* Dark background */
-	--secondary-bg: #2a2a2a;           /* Slightly lighter than primary for contrast */
-	--text-color: #ffffff;             /* Light gray for main text */
-	--lyrics-color-past: #3b3b3b;      /* Darker gray for past lyrics */
-	--lyrics-color-future: #878787;    /* Lighter gray for future lyrics */
-	--highlight-color: #ffffff;        /* White for highlights to stand out */
-	--button-bg: #2e2e2e;              /* Dark button background */
-	--button-hover-bg: #3d3d3d;        /* Lighter on hover for visual feedback */
-	--button-active-bg: #1f1f1f;       /* Darker gray for active button state */
-	--scrollbar-bg: #0f0f0f;           /* Very dark scrollbar background */
-	--scrollbar-thumb-bg: #3e3e3e;     /* Gray for scrollbar thumb */
-	--scrollbar-thumb-hover-bg: #5a5a5a; /* Lighter gray on hover for scrollbar thumb */
-}
 * {
 	filter: grayscale(100%);
 }
