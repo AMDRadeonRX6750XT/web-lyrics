@@ -2,6 +2,7 @@
 console.log("script.js");
 
 const audioElement = document.getElementById('audio_song');
+const cookieConsent = document.getElementById('cookie_consent');
 
 let lyrics = [];
 let timestamps = [];
@@ -121,7 +122,20 @@ audioElement.addEventListener("seeked", () => {
 function switchTheme(theme) {
 	const themeLink = document.getElementById("theme-style");
 	themeLink.href = `styles/${theme}.css`
+	localStorage.setItem("theme", theme)
 	return
 }
 
 main();
+
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+	if (localStorage.getItem("cookieConsent") === "yes") {
+		// cookie consent
+	} else {
+		window.location.pathname = "/cookie.html";
+	}
+	switchTheme(localStorage.getItem("theme"))
+});
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>WebLyrics - Cookies</title>
+	<link rel="stylesheet" href="styles/_global.css"> <!-- global/root theme -->
+	<link rel="stylesheet" href="styles/dark.css" id="theme-style">
+</head>
+<body>
+	<div id="cookie_consent">
+		<p>We use cookies to improve your experience on our site. By clicking "Accept cookies," you agree to our use of cookies.</p>
+		<button onclick="acceptCookies()">Accept cookies</button>
+	</div>
+
+	<script>
+		function acceptCookies() {
+			console.log("acceptCookies();")
+			localStorage.setItem("cookieConsent", "yes")
+			window.location.pathname = "/";
+		}
+	</script>
+</body>
+</html>
