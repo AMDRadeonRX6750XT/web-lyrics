@@ -84,7 +84,6 @@ function buttonPrev() {
 
 function buttonPlay() { // when space pressed!
 	const playButton = document.getElementById("play-btn")
-	console.warn(playButton.innerText)
 	if (playButton.innerText == "\u23F8") { // pause
 		playButton.innerText = "\u25B6"
 		var promise = audioElement.pause();
@@ -130,7 +129,6 @@ function onAudioTimeUpdate() {
 	var lyricElement = document.getElementById(`lyrics_text-${index}`);
 	lyricElement.classList.remove("past", "current", "future");
 	lyricElement.classList.add("current");
-	lyricElement.scrollIntoView()
 	
 	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
 	if (lyricElement) {
