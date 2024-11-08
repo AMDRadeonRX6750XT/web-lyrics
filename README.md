@@ -15,9 +15,9 @@ python -m pip install Flask
 
 # Todo
 - [x] skip to time when clicking on lyrics
-- [ ] check if the amount of timestamps equal the amount of lyrics
 - [x] proper mobile support
 - [ ] screenshots for readme
+- [ ] accessibility
 
 # Credits
 me, main contributor - https://github.com/AMDRadeonRX6750XT <br>
