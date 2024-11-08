@@ -157,7 +157,7 @@ audioElement.addEventListener("pause", () => {
 
 function switchTheme(theme) {
 	if (!theme) {
-		theme = "purple" // default
+		theme = "Purple" // default
 	}
 	const themeLink = document.getElementById("theme-style");
 	localStorage.setItem("theme", theme)
