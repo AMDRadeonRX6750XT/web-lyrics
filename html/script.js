@@ -122,6 +122,7 @@ function onAudioTimeUpdate() {
 	var lyricElement = document.getElementById(`lyrics_text-${index}`);
 	lyricElement.classList.remove("past", "current", "future");
 	lyricElement.classList.add("current");
+	lyricElement.scrollIntoView()
 	
 	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
 	if (lyricElement) {

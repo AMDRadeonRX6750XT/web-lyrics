@@ -183,6 +183,10 @@ h1 {
 	font-size: 1.2em;
 	line-height: 1.5;
 	margin: 8px 0;
+	/* no selecting = good */
+	user-select: none; /* Standard syntax */
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
 }
 
 .lyrics_text.past {
