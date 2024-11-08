@@ -18,6 +18,7 @@ python -m pip install Flask
 - [x] proper mobile support
 - [ ] screenshots for readme
 - [ ] accessibility
+- [ ] scroll div automatically to lyrics dynamically
 
 # Credits
 me, main contributor - https://github.com/AMDRadeonRX6750XT <br>
