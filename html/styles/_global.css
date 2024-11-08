@@ -1,10 +1,24 @@
 /* https://github.com/AMDRadeonRX6750XT/web-lyrics */
 
 /* the root css, meanwhile the default should be dark but can be anything */
+/* Base Variables for Colors */
+:root {
+	--primary-bg: #222222;
+	--secondary-bg: #444444;
+	--text-color: #cccccc;
+	--highlight-color: #8400ff;
+	--button-bg: #444444;
+	--button-hover-bg: #555555;
+	--button-active-bg: #333333;
+	--scrollbar-bg: #6a0bc2;
+	--scrollbar-thumb-bg: #222222;
+	--scrollbar-thumb-hover-bg: #444444;
+}
 
 body {
+	background: linear-gradient(var(--primary-bg), var(--secondary-bg));
+	color: var(--text-color);
 	font-family: Arial, Helvetica, sans-serif;
-	/****/
 	display: flex;
 	justify-content: center;
 	align-items: start;
@@ -13,14 +27,12 @@ body {
 	min-height: 100vh;
 }
 
-/* Container to Center Content */
 .container {
 	width: 90%;
 	max-width: 600px;
 	text-align: center;
 }
 
-/* Header Styles */
 h1 {
 	display: flex;
 	justify-content: space-between;
@@ -28,46 +40,19 @@ h1 {
 	margin-bottom: 20px;
 }
 
-
-/*****************/
-
-button {
-	padding: 2%;
-}
-
-
 .github-link {
-	float: right;
-	white-space: nowrap;
+	color: var(--text-color);
+	text-decoration: none;
+	font-size: 0.8em;
+	transition: color 0.3s ease;
 }
 
-audio {
-	width: 100%;
+.github-link:hover {
+	color: var(--highlight-color);
 }
 
-.lyrics_box {
-	width: 100%;
-	height: 300px;
-	margin-top: 5%;
-	overflow-y: scroll;
-	scroll-behavior: smooth;
-	padding: 20px;
-}
-
-.lyrics_text {
-	cursor: default;
-	/* no selecting = good */
-	user-select: none; /* Standard syntax */
-	-webkit-user-select: none; /* Safari */
-	-ms-user-select: none; /* IE 10 and IE 11 */
-}
-
-
-
-
-/* ++ player */
-
-.music-player {
+.track {
+	background-color: var(--primary-bg);
 	padding: 20px;
 	border-radius: 10px;
 	margin-top: 20px;
@@ -76,25 +61,48 @@ audio {
 
 .track-info {
 	display: flex;
-	align-items: center;
 	gap: 10px;
 }
 
 .track-cover {
-	width: 60px;
-	height: 60px;
+	width: 130px;
+	height: 130px;
+	background-color: var(--primary-bg);
 	border-radius: 5px;
 }
 
-.track-title, .artist-name {
+.track-title {
+	color: var(--text-color);
+	font-size: 2.2em;
+	font-weight: bold;
 	margin: 0;
 }
 
+.artist-name {
+	color: var(--text-color);
+	margin: 0;
+}
+
+.music-player {
+	padding: 20px;
+}
+
+.player-controls {
+	display: flex;
+	justify-content: center;
+	gap: 15px;
+}
+
 .player-controls button {
+	background-color: var(--button-bg);
+	color: var(--text-color);
 	padding: 12px;
 	border: none;
 	border-radius: 50%;
+	font-size: 1em;
 	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -102,31 +110,83 @@ audio {
 	height: 40px;
 }
 
+.player-controls button:hover {
+	transform: scale(1.1);
+	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
+	background-color: var(--button-hover-bg);
+}
+
+.player-controls button:active {
+	transform: scale(0.95);
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.play-btn {
+	color: var(--highlight-color);
+	font-size: 1.2em;
+}
+
 .progress-bar {
 	display: flex;
 	align-items: center;
 	gap: 10px;
 	margin-top: 10px;
+	color: var(--text-color);
 }
 
 .progress-container {
 	flex-grow: 1;
 	height: 5px;
+	background-color: var(--highlight-color);
 	border-radius: 3px;
 	position: relative;
 }
 
 .progress {
-	width: 40%; /* Adjust this to represent the current progress */
+	width: 40%;
 	height: 100%;
+	background-color: var(--highlight-color);
 	border-radius: 3px;
 }
 
-/* -- player */
+.lyrics_box {
+	width: 100%;
+	height: 300px;
+	border: none;
+	border-radius: 10px;
+	margin-top: 5%;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: var(--text-color);
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
+.lyrics_text {
+	font-size: 1.2em;
+	line-height: 1.5;
+	margin: 8px 0;
+}
 
+::-webkit-scrollbar {
+	width: 10px;
+}
 
-/* ++ other */
+::-webkit-scrollbar-track {
+	background: var(--scrollbar-bg);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-thumb-bg);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--scrollbar-thumb-hover-bg);
+}
+
 @media (max-width: 512px) {
 	.container {
 		margin: 2% 5%;
@@ -138,9 +198,12 @@ audio {
 		gap: 10px;
 	}
 
+	.github-link {
+		float: none;
+	}
+
 	.lyrics_text {
 		font-size: 1em;
 		margin: 0 2%;
 	}
 }
-/* -- other */

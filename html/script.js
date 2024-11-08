@@ -3,6 +3,7 @@ console.log("script.js");
 
 const audioElement = document.getElementById('audio_song');
 const cookieConsent = document.getElementById('cookie_consent');
+const themeText = document.getElementById('theme-text');
 
 let lyrics = [];
 let timestamps = [];
@@ -120,9 +121,13 @@ audioElement.addEventListener("seeked", () => {
 
 
 function switchTheme(theme) {
+	if (!theme) {
+		theme = "dark" // default
+	}
 	const themeLink = document.getElementById("theme-style");
-	themeLink.href = `styles/${theme}.css`
 	localStorage.setItem("theme", theme)
+	themeText.innerText = theme
+	themeLink.href = `styles/${theme}.css`
 	return
 }
 

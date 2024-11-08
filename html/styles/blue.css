@@ -1,0 +1,12 @@
+:root {
+    --primary-bg: #001f3d;
+    --secondary-bg: #003366;
+    --text-color: #e0f7fa;
+    --highlight-color: #00bcd4;
+    --button-bg: #01579b;
+    --button-hover-bg: #0277bd;
+    --button-active-bg: #0288d1;
+    --scrollbar-bg: #01579b;
+    --scrollbar-thumb-bg: #004d40;
+    --scrollbar-thumb-hover-bg: #00695c;
+}

@@ -1,54 +1,12 @@
-/* https://github.com/AMDRadeonRX6750XT/web-lyrics */
-
-body {
-	background: linear-gradient(#222222 10%, #6a0bc2);
-	color: #cccccc;
+:root {
+	--primary-bg: #2e003e;
+	--secondary-bg: #4a148c;
+	--text-color: #e1bee7;
+	--highlight-color: #9c27b0;
+	--button-bg: #8e24aa;
+	--button-hover-bg: #9c27b0;
+	--button-active-bg: #ab47bc;
+	--scrollbar-bg: #9c27b0;
+	--scrollbar-thumb-bg: #7b1fa2;
+	--scrollbar-thumb-hover-bg: #8e24aa;
 }
-
-button {
-	background-color: #222222;
-	color: #cccccc;
-	padding: 2%;
-}
-
-audio::-webkit-media-controls-panel {
-	background-color: #aaaaaa;
-}
-
-
-.lyrics_box {
-	border: 5px solid black;
-	border-radius: 10px;
-	background-color: #8a2be2;
-}
-
-.lyrics_text {
-	transition: 2s;
-	color: #bbbbbb;
-}
-
-.lyrics_text:hover {
-	transition: 0.5s;
-	color:#8400ff;
-}
-
-
-/* ++ scrollbar */
-
-::-webkit-scrollbar {
-	width: 10px;
-}
-
-::-webkit-scrollbar-track {
-	background: #6a0bc2;
-}
-
-::-webkit-scrollbar-thumb {
-	background: #222222;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: #444444;
-}
-
-/* -- scrollbar */

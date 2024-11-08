@@ -1,91 +1,12 @@
-/* https://github.com/AMDRadeonRX6750XT/web-lyrics */
-
-.github-link {
-	color: #5f00b8;
-	text-decoration: none;
-	font-size: 0.8em;
-	transition: color 0.3s ease;
+:root {
+	--primary-bg: #121212;
+	--secondary-bg: #1f1f1f;
+	--text-color: #e0e0e0;
+	--highlight-color: #bb86fc;
+	--button-bg: #3700b3;
+	--button-hover-bg: #6200ea;
+	--button-active-bg: #3700b3;
+	--scrollbar-bg: #6200ea;
+	--scrollbar-thumb-bg: #3700b3;
+	--scrollbar-thumb-hover-bg: #bb86fc;
 }
-.github-link:visited {
-	color: #7400e0
-}
-
-.github-link:hover {
-	color: #8400ff;
-}
-
-
-.lyrics_box {
-	border: none;
-	border-radius: 10px;
-	background-color: rgba(0, 0, 0, 0.5);
-	color: #cccccc;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.lyrics_text {
-	font-size: 1.2em;
-	line-height: 1.5;
-	margin: 8px 0;
-}
-
-
-
-
-/* ++ player */
-
-.music-player {
-	background-color: #333333;
-}
-
-.track-cover {
-	background-color: #222222;
-}
-
-.track-title, .artist-name {
-	color: #cccccc;
-}
-
-.player-controls button {
-	background-color: #444444;
-	color: #cccccc;
-	font-size: 1em;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
-	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.player-controls button:hover {
-	transform: scale(1.1);
-	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
-	background-color: #555555;
-}
-
-.player-controls button:active {
-	transform: scale(0.95);
-	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
-}
-
-.play-btn {
-	color: #8400ff; /* Unique color for play button */
-	font-size: 1.2em; /* Slightly larger icon size */
-}
-
-.progress-bar {
-	color: #cccccc;
-}
-
-.progress-container {
-	background-color: #6a0bc2;
-}
-
-.progress {
-	background-color: #8400ff;
-}
-
-/* -- player */
-
-
-
-/* ++ other */
-
-/* -- other */
