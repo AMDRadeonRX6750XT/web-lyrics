@@ -1,12 +1,23 @@
 :root {
-    --primary-bg: #001f3d;
-    --secondary-bg: #003366;
-    --text-color: #e0f7fa;
-    --highlight-color: #00bcd4;
-    --button-bg: #01579b;
-    --button-hover-bg: #0277bd;
-    --button-active-bg: #0288d1;
-    --scrollbar-bg: #01579b;
-    --scrollbar-thumb-bg: #004d40;
-    --scrollbar-thumb-hover-bg: #00695c;
+	/* Backgrounds */
+	--primary-bg: #001f3d;         /* Dark blue background */
+	--secondary-bg: #002b5c;       /* Slightly lighter dark blue for contrast */
+
+	/* Text Colors */
+	--text-color: #b7f7ff;         /* Light blue text for readability */
+	--lyrics-color-past: #455762;  /* Grayish blue for past lyrics */
+	--lyrics-color-future: #809dac;/* Light grayish blue for future lyrics */
+
+	/* Highlight and Accent */
+	--highlight-color: #29b6f6;    /* Bright blue for highlights */
+
+	/* Buttons */
+	--button-bg: #01579b;          /* Deep blue button background */
+	--button-hover-bg: #0277bd;    /* Slightly brighter blue on hover */
+	--button-active-bg: #0288d1;   /* Even brighter blue on active */
+
+	/* Scrollbar */
+	--scrollbar-bg: #003366;       /* Background of scrollbar, matching theme */
+	--scrollbar-thumb-bg: #004d73; /* Scroll thumb color for better contrast */
+	--scrollbar-thumb-hover-bg: #005f8d; /* Slightly brighter for hover */
 }

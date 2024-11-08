@@ -1,12 +1,14 @@
 :root {
-    --primary-bg: #fce4ec; /* Soft pink background */
-    --secondary-bg: #f8bbd0; /* Lighter pink */
-    --text-color: #212121; /* Dark text for contrast */
-    --highlight-color: #ff4081; /* Bright pink highlight */
-    --button-bg: #f50057; /* Vivid pink for buttons */
-    --button-hover-bg: #c51162; /* Darker pink on hover */
-    --button-active-bg: #d81b60; /* Deeper pink when pressed */
-    --scrollbar-bg: #ff80ab; /* Soft pink scrollbar */
-    --scrollbar-thumb-bg: #d81b60; /* Darker pink for scrollbar thumb */
-    --scrollbar-thumb-hover-bg: #f50057; /* Bright pink hover for scrollbar */
+	--primary-bg: #fce4ec; /* Soft pink background */
+	--secondary-bg: #f8bbd0; /* Lighter pink */
+	--text-color: #212121; /* Dark text for contrast */
+	--lyrics-color-past: #323232;
+	--lyrics-color-future: #838383;
+	--highlight-color: #ff4081; /* Bright pink highlight */
+	--button-bg: #f50057; /* Vivid pink for buttons */
+	--button-hover-bg: #c51162; /* Darker pink on hover */
+	--button-active-bg: #d81b60; /* Deeper pink when pressed */
+	--scrollbar-bg: #ff80ab; /* Soft pink scrollbar */
+	--scrollbar-thumb-bg: #d81b60; /* Darker pink for scrollbar thumb */
+	--scrollbar-thumb-hover-bg: #f50057; /* Bright pink hover for scrollbar */
 }

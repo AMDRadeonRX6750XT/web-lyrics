@@ -2,7 +2,9 @@
 	--primary-bg: #2e003e;
 	--secondary-bg: #4a148c;
 	--text-color: #e1bee7;
-	--highlight-color: #9c27b0;
+	--lyrics-color-past: #323232;
+	--lyrics-color-future: #838383;
+	--highlight-color: #c530df;
 	--button-bg: #8e24aa;
 	--button-hover-bg: #9c27b0;
 	--button-active-bg: #ab47bc;

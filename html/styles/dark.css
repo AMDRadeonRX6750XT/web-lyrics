@@ -1,12 +1,19 @@
 :root {
-	--primary-bg: #121212;
-	--secondary-bg: #1f1f1f;
-	--text-color: #e0e0e0;
-	--highlight-color: #bb86fc;
-	--button-bg: #3700b3;
-	--button-hover-bg: #6200ea;
-	--button-active-bg: #3700b3;
-	--scrollbar-bg: #6200ea;
-	--scrollbar-thumb-bg: #3700b3;
-	--scrollbar-thumb-hover-bg: #bb86fc;
+	--primary-bg: #222222;
+	--secondary-bg: #444444;
+	--text-color: #cccccc;
+	--lyrics-color-past: #323232;
+	--lyrics-color-future: #838383;
+	--highlight-color: #cecece;
+	--button-bg: #444444;
+	--button-hover-bg: #555555;
+	--button-active-bg: #333333;
+	--scrollbar-bg: #000000;
+	--scrollbar-thumb-bg: #222222;
+	--scrollbar-thumb-hover-bg: #444444;
 }
+
+/*body {
+	background-image: url("dark.jpeg");
+	background-repeat: no-repeat;
+}*/

@@ -1,16 +1,21 @@
 /* https://github.com/AMDRadeonRX6750XT/web-lyrics */
 
-/* the root css, meanwhile the default should be dark but can be anything */
+/* the root css which everything is based on */
+
 /* Base Variables for Colors */
+
+/* is this needed here? */
 :root {
 	--primary-bg: #222222;
 	--secondary-bg: #444444;
 	--text-color: #cccccc;
-	--highlight-color: #8400ff;
+	--lyrics-color-past: #323232;
+	--lyrics-color-future: #838383;
+	--highlight-color: #cecece;
 	--button-bg: #444444;
 	--button-hover-bg: #555555;
 	--button-active-bg: #333333;
-	--scrollbar-bg: #6a0bc2;
+	--scrollbar-bg: #000000;
 	--scrollbar-thumb-bg: #222222;
 	--scrollbar-thumb-hover-bg: #444444;
 }
@@ -57,13 +62,17 @@ h1 {
 
 .github-link {
 	color: var(--text-color);
-	text-decoration: none;
+	/*text-decoration: none;*/
 	font-size: 0.8em;
 	transition: color 0.3s ease;
 }
 
 .github-link:hover {
 	color: var(--highlight-color);
+}
+
+.track-details * {
+	float: left;
 }
 
 .track {
@@ -190,7 +199,7 @@ h1 {
 }
 
 .lyrics_text.past {
-	color: var(--primary-bg);
+	color: var(--lyrics-color-past);
 }
 
 .lyrics_text.current {
@@ -199,7 +208,7 @@ h1 {
 }
 
 .lyrics_text.future {
-	color: var(--secondary-bg);
+	color: var(--lyrics-color-future);
 }
 
 
