@@ -21,7 +21,7 @@
 	--scrollbar-thumb-hover-bg: #252525;
 }
 
-html, body {margin: 0; height: 100%; overflow: hidden} /* disables scrolling on body */
+/*html, body {margin: 0; height: 100%; overflow: hidden} /* disables scrolling on body */
 
 body {
 	background: linear-gradient(var(--primary-bg), var(--secondary-bg));
