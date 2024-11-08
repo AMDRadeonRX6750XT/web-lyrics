@@ -4,11 +4,32 @@
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	margin-left: 10%;
-	margin-right: 10%;
-	margin-top: 2%;
-	margin-bottom: 2%;
+	/****/
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	padding-top: 20px;
+	margin: 0;
+	min-height: 100vh;
 }
+
+/* Container to Center Content */
+.container {
+	width: 90%;
+	max-width: 600px;
+	text-align: center;
+}
+
+/* Header Styles */
+h1 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+
+/*****************/
 
 button {
 	padding: 2%;
@@ -20,33 +41,106 @@ button {
 	white-space: nowrap;
 }
 
-@media (max-width: 512px) {
-	.github-link {
-		float: none;
-	}
-}
-
 audio {
 	width: 100%;
 }
 
 .lyrics_box {
 	width: 100%;
-	height: 700px;
+	height: 300px;
 	margin-top: 5%;
 	overflow-y: scroll;
 	scroll-behavior: smooth;
+	padding: 20px;
 }
 
 .lyrics_text {
-	margin-left: 5%;
-	margin-right: 5%;
-	margin-top: 2%;
-	margin-bottom: 2%;
 	cursor: default;
+	/* no selecting = good */
 	user-select: none; /* Standard syntax */
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
 }
 
 
+
+
+/* ++ player */
+
+.music-player {
+	padding: 20px;
+	border-radius: 10px;
+	margin-top: 20px;
+	text-align: left;
+}
+
+.track-info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.track-cover {
+	width: 60px;
+	height: 60px;
+	border-radius: 5px;
+}
+
+.track-title, .artist-name {
+	margin: 0;
+}
+
+.player-controls button {
+	padding: 12px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+}
+
+.progress-bar {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 10px;
+}
+
+.progress-container {
+	flex-grow: 1;
+	height: 5px;
+	border-radius: 3px;
+	position: relative;
+}
+
+.progress {
+	width: 40%; /* Adjust this to represent the current progress */
+	height: 100%;
+	border-radius: 3px;
+}
+
+/* -- player */
+
+
+
+/* ++ other */
+@media (max-width: 512px) {
+	.container {
+		margin: 2% 5%;
+	}
+
+	h1 {
+		flex-direction: column;
+		text-align: center;
+		gap: 10px;
+	}
+
+	.lyrics_text {
+		font-size: 1em;
+		margin: 0 2%;
+	}
+}
+/* -- other */

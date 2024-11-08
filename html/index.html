@@ -6,31 +6,58 @@
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="stylesheet" href="styles/_global.css"> <!-- global/root theme -->
 	<link rel="stylesheet" href="styles/dark.css" id="theme-style">
-	<title>web-lyrics!</title>
+	<title>WebLyrics ♪</title>
 </head>
 <body>
 	<!-- https://github.com/AMDRadeonRX6750XT/web-lyrics -->
-	<div>
-		<h1>
-			web-lyrics!
-			<a href="https://github.com/AMDRadeonRX6750XT/web-lyrics" target="_blank" class="github-link">Github repo <!--<img src="/favicon.ico" alt="Profile picture" style="height: 1em;">--></a>
-		</h1>
-	</div>
+	<div class="container">
+	<h1>
+		<span>WebLyrics ♪</span>
+		<a href="https://github.com/AMDRadeonRX6750XT/web-lyrics" target="_blank" class="github-link">GitHub</a>
+	</h1>
+
 	<!--<button onclick="audioStart();">Start music (may be loud)</button>-->
-	<button onclick="switchTheme('light')">Light Theme</button>
-	<button onclick="switchTheme('dark')">Dark Theme</button>
-	<button onclick="switchTheme('purple')">Purple Theme</button>
+	<button onclick="switchTheme('debug')">Debug</button>
+	<button onclick="switchTheme('light')">Light</button>
+	<button onclick="switchTheme('dark')">Dark</button>
+	<button onclick="switchTheme('purple')">Purple</button>
 	<br> <br>
+
 	<audio controls preload="auto" id="audio_song">
 		<source src="/song.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
 	</audio>
+	<!-- Centered Music Player Section -->
+	<div class="music-player">
+		<div class="track-info">
+			<img src="/cover.png" alt="Track Cover" class="track-cover">
+			<div class="track-details">
+				<p class="track-title">Track Title</p>
+				<p class="artist-name">Artist Name</p>
+			</div>
+		</div>
+		<div class="player-controls">
+			<button class="prev-btn">&#10094;</button>
+			<button class="play-btn">&#9658;</button>
+			<button class="next-btn">&#10095;</button>
+		</div>
+		<div class="progress-bar">
+			<span class="current-time">1:42</span>
+			<div class="progress-container">
+				<div class="progress"></div>
+			</div>
+			<span class="duration">3:37</span>
+		</div>
+	</div>
+
 	<noscript>
 		<h1 style="color: red;">Javascript must be enabled.</h1>
 	</noscript>
+
 	<div class="lyrics_box" id="lyrics_box">
 	</div>
+</div>
 
-	<script src="/script.js"></script>
+<script src="/script.js"></script>
 </body>
 </html>

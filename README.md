@@ -17,3 +17,7 @@ python -m pip install Flask
 - [ ] check if the amount of timestamps equal the amount of lyrics
 - [x] proper mobile support
 - [ ] screenshots for readme
+
+# Credits
+me, main contributor - https://github.com/AMDRadeonRX6750XT
+helped - https://github.com/novawraith

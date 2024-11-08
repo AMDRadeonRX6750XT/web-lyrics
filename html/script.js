@@ -98,10 +98,11 @@ function onAudioTimeUpdate() {
 	}
 	for (let i = index; i < lyrics.length; i++) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
-		currentLyric.classList.add("current");
+		lyricElement.classList.add("fast");
 	}
 	var lyricElement = document.getElementById(`lyrics_text-${index}`);
-	lyricElement.classList.add("future");
+	lyricElement.classList.remove("past", "current", "future");
+	lyricElement.classList.add("current");
 	
 	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
 	if (lyricElement) {
@@ -119,20 +120,8 @@ audioElement.addEventListener("seeked", () => {
 
 function switchTheme(theme) {
 	const themeLink = document.getElementById("theme-style");
-	
-	switch (theme) { // why even bother and not just use `styles/${theme}`
-	case 'light':
-		themeLink.href = "styles/light.css";
-		break;
-	case 'dark':
-		themeLink.href = "styles/dark.css";
-		break;
-	case 'purple':
-		themeLink.href = "styles/purple.css";
-		break;
-	 default:
-		themeLink.href = "styles/dark.css"; // default to dark theme
-	}
+	themeLink.href = `styles/${theme}.css`
+	return
 }
 
 main();
