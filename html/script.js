@@ -82,13 +82,14 @@ function buttonPrev() {
 	audioElement.currentTime = 0
 }
 
+let playing = false;
+const playButton = document.getElementById("play-btn")
 function buttonPlay() { // when space pressed!
-	const playButton = document.getElementById("play-btn")
-	if (playButton.innerText == "\u23F8") { // pause
-		playButton.innerText = "\u25B6"
+	if (playing) { // pause
+		playing = false
 		var promise = audioElement.pause();
 	} else { // play
-		playButton.innerText = "\u23F8"
+		playing = true
 		var promise = audioElement.play();
 	}
 
@@ -143,6 +144,12 @@ function onAudioTimeUpdate() {
 audioElement.addEventListener("timeupdate", onAudioTimeUpdate);
 audioElement.addEventListener("seeked", () => {
 	// console.log("Skip completed to:", audioElement.currentTime);
+});
+audioElement.addEventListener("play", () => {
+	playButton.innerText = "\u23F8"
+});
+audioElement.addEventListener("pause", () => {
+	playButton.innerText = "\u25B6"
 });
 
 
