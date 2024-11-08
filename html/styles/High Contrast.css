@@ -1,0 +1,15 @@
+/* High Contrast Theme */
+:root {
+	--primary-bg: #000000; /* Deep black for primary background */
+	--secondary-bg: #1a1a1a; /* Dark gray for secondary background */
+	--text-color: #ffffff; /* Bright white for main text */
+	--lyrics-color-past: #4c4c4c; /* Lighter gray for past lyrics */
+	--lyrics-color-future: #bfbfbf; /* Light gray for upcoming lyrics */
+	--highlight-color: #ffd700; /* Bright gold for highlights */
+	--button-bg: #1a1a1a; /* Dark background for buttons */
+	--button-hover-bg: #333333; /* Medium gray for button hover */
+	--button-active-bg: #555555; /* Lighter gray for button active state */
+	--scrollbar-bg: #000000; /* Black for scrollbar background */
+	--scrollbar-thumb-bg: #888888; /* Light gray for scrollbar thumb */
+	--scrollbar-thumb-hover-bg: #bbbbbb; /* Brighter gray for thumb on hover */
+}
