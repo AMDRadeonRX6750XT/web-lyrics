@@ -146,7 +146,7 @@ audioElement.addEventListener("seeked", () => {
 	// console.log("Skip completed to:", audioElement.currentTime);
 });
 audioElement.addEventListener("play", () => {
-	playButton.innerText = "\u23F8"
+	playButton.innerText = "II" // "\u23F8"
 });
 audioElement.addEventListener("pause", () => {
 	playButton.innerText = "\u25B6"

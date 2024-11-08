@@ -1,14 +1,15 @@
+/* Candy (Pink) Theme */
 :root {
-	--primary-bg: #fce4ec; /* Soft pink background */
-	--secondary-bg: #f8bbd0; /* Lighter pink */
-	--text-color: #212121; /* Dark text for contrast */
-	--lyrics-color-past: #323232;
-	--lyrics-color-future: #838383;
-	--highlight-color: #ff4081; /* Bright pink highlight */
-	--button-bg: #f50057; /* Vivid pink for buttons */
-	--button-hover-bg: #c51162; /* Darker pink on hover */
-	--button-active-bg: #d81b60; /* Deeper pink when pressed */
-	--scrollbar-bg: #ff80ab; /* Soft pink scrollbar */
-	--scrollbar-thumb-bg: #d81b60; /* Darker pink for scrollbar thumb */
-	--scrollbar-thumb-hover-bg: #f50057; /* Bright pink hover for scrollbar */
+	--primary-bg: #ce2b64; /* light pink background */
+	--secondary-bg: #b65278; /* slightly darker pink for secondary elements */
+	--text-color: #ff3d9e; /* vibrant pink for text */
+	--lyrics-color-past: #aa5b79; /* soft pastel pink for past lyrics */
+	--lyrics-color-future: #c46d8f; /* slightly darker pink for future lyrics */
+	--highlight-color: #ff4da6; /* bright pink for highlights */
+	--button-bg: #ff99cc; /* candy pink for buttons */
+	--button-hover-bg: #ff80bf; /* darker candy pink for button hover */
+	--button-active-bg: #ff66b2; /* even darker pink for button active state */
+	--scrollbar-bg: #ffe3ed; /* same as primary background */
+	--scrollbar-thumb-bg: #ff66b2; /* pink for scrollbar thumb */
+	--scrollbar-thumb-hover-bg: #ff4da6; /* brighter pink for scrollbar thumb hover */
 }

@@ -1,9 +1,9 @@
 :root {
 	--primary-bg: #1e1e1e;             /* Dark background */
 	--secondary-bg: #2a2a2a;           /* Slightly lighter than primary for contrast */
-	--text-color: #d0d0d0;             /* Light gray for main text */
+	--text-color: #ffffff;             /* Light gray for main text */
 	--lyrics-color-past: #3b3b3b;      /* Darker gray for past lyrics */
-	--lyrics-color-future: #a0a0a0;    /* Lighter gray for future lyrics */
+	--lyrics-color-future: #878787;    /* Lighter gray for future lyrics */
 	--highlight-color: #ffffff;        /* White for highlights to stand out */
 	--button-bg: #2e2e2e;              /* Dark button background */
 	--button-hover-bg: #3d3d3d;        /* Lighter on hover for visual feedback */

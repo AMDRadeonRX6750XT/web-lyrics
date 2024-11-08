@@ -9,7 +9,7 @@
 :root {
 	--primary-bg: #222222;
 	--secondary-bg: #444444;
-	--text-color: #cccccc;
+	--text-color: #cccccc; /* also used for current lyrics */
 	--lyrics-color-past: #323232;
 	--lyrics-color-future: #838383;
 	--highlight-color: #cecece;
@@ -42,6 +42,11 @@ button {
 
 .active-theme-button {
 	background-color: var(--highlight-color);
+}
+
+.current-theme-indicator {
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: var(--lyrics-color-past); /* other variable? */
 }
 
 .theme-button {
