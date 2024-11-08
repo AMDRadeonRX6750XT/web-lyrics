@@ -1,5 +1,5 @@
 <!-- https://github.com/AMDRadeonRX6750XT/web-lyrics -->
-# web-lyrics ♪
+# web-lyrics <sup>♪</sup>
 Synchronized lyrics with the music in the browser.
 
 # How to use
