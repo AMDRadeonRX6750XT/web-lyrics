@@ -181,6 +181,35 @@ function switchTheme(theme) {
 	return
 }
 
+// ++ removeData();
+function removeData() {
+	console.log("removeData();")
+	// this function was made by gpt bc this is a lot of weird stuff that's really weird and weird
+	const cookies = document.cookie.split(";");
+
+	for (let i = 0; i < cookies.length; i++) {
+		const cookie = cookies[i];
+		const cookieName = cookie.split("=")[0].trim();
+		document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+	}
+	localStorage.clear();
+	sessionStorage.clear();
+	const dbs = window.indexedDB.databases();
+	dbs.then((databases) => {
+		databases.forEach(db => {
+			window.indexedDB.deleteDatabase(db.name);
+		});
+	});
+	if ('caches' in window) {
+		caches.keys().then(cacheNames => {
+			cacheNames.forEach(cacheName => {
+				caches.delete(cacheName);
+			});
+		});
+	}
+}
+// -- removeData();
+
 main();
 
 
