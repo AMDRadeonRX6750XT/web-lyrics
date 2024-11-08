@@ -216,11 +216,11 @@ main();
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
-	if (localStorage.getItem("cookieConsent") === "yes") {
-		// cookie consent
-	} else {
+	if (localStorage.getItem("cookieConsent") !== "yes") {
 		window.location.pathname = "/cookie.html";
+	} else {
+		// cookie consented.
+		switchTheme(localStorage.getItem("theme"))
 	}
-	switchTheme(localStorage.getItem("theme"))
 });
 
