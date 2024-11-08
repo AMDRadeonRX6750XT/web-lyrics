@@ -66,14 +66,14 @@ h1 {
 	margin-bottom: 20px;
 }
 
-.github-link {
+.links {
 	color: var(--text-color);
 	/*text-decoration: none;*/
 	font-size: 0.8em;
 	transition: color 0.3s ease;
 }
 
-.github-link:hover {
+.links:hover {
 	color: var(--highlight-color);
 }
 
@@ -249,8 +249,8 @@ h1 {
 		gap: 10px;
 	}
 
-	.github-link {
-		float: none;
+	.links {
+		float: none; /* I don't think this is needed? */
 	}
 
 	.lyrics_text {
