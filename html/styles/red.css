@@ -1,14 +1,14 @@
 :root {
-	--primary-bg: #330000;
-	--secondary-bg: #660000;
-	--text-color: #ffcdd2;
-	--lyrics-color-past: #323232;
-	--lyrics-color-future: #838383;
-	--highlight-color: #f44336;
-	--button-bg: #b71c1c;
-	--button-hover-bg: #c62828;
-	--button-active-bg: #d32f2f;
-	--scrollbar-bg: #c62828;
-	--scrollbar-thumb-bg: #b71c1c;
-	--scrollbar-thumb-hover-bg: #f44336;
+	--primary-bg: #1a0000; /* Dark red background */
+	--secondary-bg: #330000; /* Slightly lighter red for secondary backgrounds */
+	--text-color: #ffcccc; /* Light red/pinkish color for text */
+	--lyrics-color-past: #3d0000; /* Darker red for past lyrics */
+	--lyrics-color-future: #b36666; /* Lighter red for future lyrics */
+	--highlight-color: #ff6666; /* Red highlight color */
+	--button-bg: #660000; /* Dark red button background */
+	--button-hover-bg: #7f0000; /* Lighter red on hover */
+	--button-active-bg: #4c0000; /* Even darker red when button is active */
+	--scrollbar-bg: #1a0000; /* Dark red scrollbar background */
+	--scrollbar-thumb-bg: #660000; /* Dark red scrollbar thumb */
+	--scrollbar-thumb-hover-bg: #7f0000; /* Lighter red scrollbar thumb on hover */
 }

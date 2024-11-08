@@ -1,14 +1,15 @@
 :root {
-	--primary-bg: #f57f17;
-	--secondary-bg: #fbc02d;
-	--text-color: #fff9c4;
-	--lyrics-color-past: #323232;
-	--lyrics-color-future: #838383;
-	--highlight-color: #ffeb3b;
-	--button-bg: #fbc02d;
-	--button-hover-bg: #ffeb3b;
-	--button-active-bg: #ffb300;
-	--scrollbar-bg: #ffeb3b;
-	--scrollbar-thumb-bg: #f57f17;
-	--scrollbar-thumb-hover-bg: #ff9800;
+	--primary-bg: #2c2c00; /* Dark yellow background */
+	--secondary-bg: #595900; /* Darker yellowish tone for secondary background */
+	--text-color: #f2e200; /* Bright, golden yellow for text */
+	--lyrics-color-past: #4d4d00; /* A dark olive yellow for past lyrics */
+	--lyrics-color-future: #b2b200; /* Lighter, more vibrant yellow for future lyrics */
+	--highlight-color: #ffcc00; /* Warm amber highlight color */
+	--button-bg: #595900; /* Dark yellow button background */
+	--button-hover-bg: #7a7a00; /* Lighter yellow for hover state */
+	--button-active-bg: #3f3f00; /* Even darker yellow for active button state */
+	--scrollbar-bg: #3c3c00; /* Darker background for the scrollbar */
+	--scrollbar-thumb-bg: #595900; /* Match scrollbar thumb to secondary background */
+	--scrollbar-thumb-hover-bg: #7a7a00; /* Lighter thumb color on hover */
 }
+/* needs some fixing, looks kinda weird */
