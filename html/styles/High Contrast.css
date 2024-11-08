@@ -1,7 +1,7 @@
 /* High Contrast Theme */
 :root {
-	--primary-bg: #000000; /* Deep black for primary background */
-	--secondary-bg: #1a1a1a; /* Dark gray for secondary background */
+	--primary-bg: #000000;
+	--secondary-bg: #000000;
 	--text-color: #ffffff; /* Bright white for main text */
 	--lyrics-color-past: #4c4c4c; /* Lighter gray for past lyrics */
 	--lyrics-color-future: #bfbfbf; /* Light gray for upcoming lyrics */
