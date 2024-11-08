@@ -1,6 +1,7 @@
 <!-- https://github.com/AMDRadeonRX6750XT/web-lyrics -->
 # web-lyrics <sup>♪</sup>
-Synchronized lyrics with the music in the browser.
+Synchronized lyrics with the music in the browser. <br>
+Made in plain CSS & JS.
 
 # How to use
 1. Add a song in html/song.mp3
