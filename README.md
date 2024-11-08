@@ -26,4 +26,4 @@ python -m pip install Flask
 
 # Credits
 me, main contributor - https://github.com/AMDRadeonRX6750XT <br>
-helped with the player - https://github.com/novawraith <br>
+helped with the player and making themes a thing - https://github.com/novawraith <br>
