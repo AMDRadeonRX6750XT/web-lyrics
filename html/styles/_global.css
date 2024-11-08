@@ -8,7 +8,7 @@
 /* template for themes, based on dark.css */
 :root {
 	--primary-bg: #222222;
-	--secondary-bg: #444444;
+	--secondary-bg: #252525;
 	--text-color: #cccccc; /* also used for current lyrics */
 	--lyrics-color-past: #323232;
 	--lyrics-color-future: #838383;
@@ -18,7 +18,7 @@
 	--button-active-bg: #333333;
 	--scrollbar-bg: #000000;
 	--scrollbar-thumb-bg: #222222;
-	--scrollbar-thumb-hover-bg: #444444;
+	--scrollbar-thumb-hover-bg: #252525;
 }
 
 body {
