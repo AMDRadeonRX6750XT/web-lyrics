@@ -12,4 +12,23 @@
 	--scrollbar-thumb-bg: #595900; /* Match scrollbar thumb to secondary background */
 	--scrollbar-thumb-hover-bg: #7a7a00; /* Lighter thumb color on hover */
 }
-/* needs some fixing, looks kinda weird */
+/* ^ needs some fixing, looks kinda weird */
+body {
+	background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg), var(--highlight-color));
+	background-size: 400% 400%; /* Oversized to allow a slow animation */
+	animation: gradientAnimation 15s ease infinite;
+	color: var(--text-color);
+}
+
+/* is it possible that this messes with other themes? */
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
