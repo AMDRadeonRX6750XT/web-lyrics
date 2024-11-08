@@ -19,5 +19,5 @@ python -m pip install Flask
 - [ ] screenshots for readme
 
 # Credits
-me, main contributor - https://github.com/AMDRadeonRX6750XT
-helped - https://github.com/novawraith
+me, main contributor - https://github.com/AMDRadeonRX6750XT <br>
+helped - https://github.com/novawraith <br>
