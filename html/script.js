@@ -60,7 +60,6 @@ async function main() {
 		div.append(p);
 		i++;
 	});
-
 }
 
 
@@ -100,7 +99,7 @@ function onAudioTimeUpdate() {
 	}
 	for (let i = index; i < lyrics.length; i++) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
-		lyricElement.classList.add("fast");
+		lyricElement.classList.add("future");
 	}
 	var lyricElement = document.getElementById(`lyrics_text-${index}`);
 	lyricElement.classList.remove("past", "current", "future");

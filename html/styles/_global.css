@@ -27,6 +27,17 @@ body {
 	min-height: 100vh;
 }
 
+button {
+	background-color: var(--button-bg);
+	padding: 0;
+	border: none;
+	width: 100px;
+}
+
+.theme-button {
+	text-align: left;
+}
+
 .container {
 	width: 90%;
 	max-width: 600px;
@@ -164,10 +175,25 @@ h1 {
 }
 
 .lyrics_text {
+	transition: 1s;
 	font-size: 1.2em;
 	line-height: 1.5;
 	margin: 8px 0;
 }
+
+.lyrics_text.past {
+	color: var(--primary-bg);
+}
+
+.lyrics_text.current {
+	color: var(--text-color);
+	/*font-size: 1.4em;*/
+}
+
+.lyrics_text.future {
+	color: var(--secondary-bg);
+}
+
 
 ::-webkit-scrollbar {
 	width: 10px;
