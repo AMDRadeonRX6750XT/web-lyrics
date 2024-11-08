@@ -21,6 +21,7 @@ python -m pip install Flask
 - [ ] accessibility
 - [ ] scroll div automatically to lyrics dynamically
 - [ ] song selection
+- [ ] space theme (with shooting stars)
 
 # Credits
 me, main contributor - https://github.com/AMDRadeonRX6750XT <br>
