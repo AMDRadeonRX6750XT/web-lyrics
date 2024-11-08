@@ -1,14 +1,14 @@
 :root {
-	--primary-bg: #1b5e20;
-	--secondary-bg: #388e3c;
-	--text-color: #a5d6a7;
-	--lyrics-color-past: #323232;
-	--lyrics-color-future: #838383;
-	--highlight-color: #4caf50;
-	--button-bg: #2e7d32;
-	--button-hover-bg: #388e3c;
-	--button-active-bg: #43a047;
-	--scrollbar-bg: #43a047;
-	--scrollbar-thumb-bg: #388e3c;
-	--scrollbar-thumb-hover-bg: #4caf50;
+	--primary-bg: #1b2b1f; /* Dark green background */
+	--secondary-bg: #2a3d28; /* Lighter dark green for secondary elements */
+	--text-color: #e0f4e5; /* Light greenish text */
+	--lyrics-color-past: #334d32; /* Darker green for past lyrics */
+	--lyrics-color-future: #8fae81; /* Muted green for future lyrics */
+	--highlight-color: #a1dba5; /* Soft light green highlight */
+	--button-bg: #2a3d28; /* Green button background */
+	--button-hover-bg: #3b4d3b; /* Slightly lighter green for hover */
+	--button-active-bg: #1c2c1c; /* Darker green for active buttons */
+	--scrollbar-bg: #1a261a; /* Dark green for scrollbar background */
+	--scrollbar-thumb-bg: #2a3d28; /* Greenish thumb */
+	--scrollbar-thumb-hover-bg: #3b4d3b; /* Slightly lighter green thumb on hover */
 }

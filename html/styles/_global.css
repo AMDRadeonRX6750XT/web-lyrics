@@ -206,6 +206,7 @@ h1 {
 
 .lyrics_text.past {
 	color: var(--lyrics-color-past);
+	filter: blur(2px);
 }
 
 .lyrics_text.current {
@@ -215,6 +216,7 @@ h1 {
 
 .lyrics_text.future {
 	color: var(--lyrics-color-future);
+	filter:opacity(0.75); /* 25% transparent */
 }
 
 
