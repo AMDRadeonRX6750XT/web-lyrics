@@ -31,7 +31,7 @@
 	Current theme: <span id="theme-text">Dark</span>
 	<br> <br>
 
-	<audio controls preload="auto" id="audio_song">
+	<audio preload="auto" id="audio_song">
 		<source src="/song.mp3" type="audio/mpeg">
 		Your browser does not support the audio element.
 	</audio>
@@ -46,7 +46,7 @@
 		</div>
 		<div class="player-controls">
 			<button class="prev-btn" onclick="buttonPrev()">&#10094;</button>
-			<button class="play-btn" onclick="buttonPlay()">&#9658;</button>
+			<button class="play-btn" id="play-btn" onclick="buttonPlay()">&#9658;</button>
 			<button class="next-btn" onclick="buttonPrev()">&#10095;</button>
 		</div>
 		<!-- IDs are unique -->

@@ -82,8 +82,16 @@ function buttonPrev() {
 	audioElement.currentTime = 0
 }
 
-function buttonPlay() {
-	var promise = audioElement.play();
+function buttonPlay() { // when space pressed!
+	const playButton = document.getElementById("play-btn")
+	console.warn(playButton.innerText)
+	if (playButton.innerText == "\u23F8") { // pause
+		playButton.innerText = "\u25B6"
+		var promise = audioElement.pause();
+	} else { // play
+		playButton.innerText = "\u23F8"
+		var promise = audioElement.play();
+	}
 
 	if (promise !== undefined) {
 		promise.then(_ => {
