@@ -15,13 +15,14 @@ python -m pip install Flask
 6. Run server.py (from the directory)
 
 # Todo
-- [x] skip to time when clicking on lyrics
-- [x] proper mobile support
-- [ ] screenshots for readme
-- [ ] accessibility
+- [ ] toggle showing theme options
 - [ ] scroll div automatically to lyrics dynamically
 - [ ] song selection
+- [ ] accessibility
+- [ ] screenshots for readme
 - [ ] space theme (with shooting stars)
+- [x] skip to time when clicking on lyrics
+- [x] proper mobile support
 
 # Credits
 me, main contributor - https://github.com/AMDRadeonRX6750XT <br>

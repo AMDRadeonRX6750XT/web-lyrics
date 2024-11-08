@@ -39,7 +39,9 @@ button {
 	background-color: var(--button-bg);
 	padding: 0;
 	border: none;
-	width: 100px;
+	width: 200px;
+	height: 40px;
+	white-space: nowrap;
 }
 
 .active-theme-button {
