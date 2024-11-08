@@ -34,7 +34,7 @@ body {
 }
 
 /* Fancy Text Block */
-.fancy-text {
+.lyrics_text {
 	font-family: 'Courier New', Courier, monospace;
 	color: var(--highlight-color);
 	text-shadow: 0 0 5px var(--text-color), 0 0 10px var(--highlight-color);
@@ -80,7 +80,7 @@ button:active {
 }
 
 /* Additional fancy text animations */
-.fancy-text.glow {
+.lyrics_text.glow {
 	animation: glow-animation 1.5s ease-in-out infinite alternate;
 }
 
