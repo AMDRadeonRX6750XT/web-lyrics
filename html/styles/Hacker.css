@@ -1,0 +1,94 @@
+
+#main-container {
+	max-width: 1200px;
+}
+
+/* made by gpt but looks really good */
+:root {
+	/* Primary Colors */
+	--primary-bg: #121212; /* Dark background */
+	--secondary-bg: #1a1a1a; /* Slightly lighter dark background */
+	--text-color: #00ff41; /* Neon green for text */
+	--highlight-color: #33ff66; /* Brighter green for highlights */
+	
+	/* Lyrics Colors (assuming a hacker style use-case) */
+	--lyrics-color-past: #006600; /* Dark green for past lyrics */
+	--lyrics-color-future: #00cc44; /* Bright green for future lyrics */
+	
+	/* Button Styling */
+	--button-bg: #003300; /* Dark green for button background */
+	--button-hover-bg: #005500; /* Slightly brighter dark green for hover */
+	--button-active-bg: #002200; /* Darker green for active state */
+	
+	/* Scrollbar Colors */
+	--scrollbar-bg: #000000; /* Black scrollbar background */
+	--scrollbar-thumb-bg: #003300; /* Dark green thumb */
+	--scrollbar-thumb-hover-bg: #004400; /* Brighten on hover */
+}
+
+/* Body styling for full hacker theme */
+body {
+	background-color: var(--primary-bg);
+	color: var(--text-color);
+	font-family: 'Courier New', Courier, monospace;
+}
+
+/* Fancy Text Block */
+.fancy-text {
+	font-family: 'Courier New', Courier, monospace;
+	color: var(--highlight-color);
+	text-shadow: 0 0 5px var(--text-color), 0 0 10px var(--highlight-color);
+	font-size: 1.2em;
+	padding: 5px;
+	background-color: var(--secondary-bg);
+	border: 1px solid var(--text-color);
+	border-radius: 5px;
+}
+
+/* Button Styling */
+button {
+	background-color: var(--button-bg);
+	color: var(--text-color);
+	border: none;
+	padding: 8px 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: var(--button-hover-bg);
+}
+
+button:active {
+	background-color: var(--button-active-bg);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+	width: 12px;
+	background-color: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--scrollbar-thumb-bg);
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--scrollbar-thumb-hover-bg);
+}
+
+/* Additional fancy text animations */
+.fancy-text.glow {
+	animation: glow-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow-animation {
+	from {
+		text-shadow: 0 0 5px var(--text-color), 0 0 10px var(--highlight-color);
+	}
+	to {
+		text-shadow: 0 0 10px var(--text-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+	}
+}
