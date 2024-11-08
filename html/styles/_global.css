@@ -34,6 +34,10 @@ button {
 	width: 100px;
 }
 
+.active-theme-button {
+	background-color: var(--highlight-color);
+}
+
 .theme-button {
 	text-align: left;
 }

@@ -1,12 +1,13 @@
 /* https://github.com/AMDRadeonRX6750XT/web-lyrics */
 console.log("script.js");
 
-const audioElement = document.getElementById('audio_song');
-const cookieConsent = document.getElementById('cookie_consent');
-const themeText = document.getElementById('theme-text');
+const audioElement = document.getElementById('audio_song')
+const cookieConsent = document.getElementById('cookie_consent')
+const themeText = document.getElementById('theme-text')
 
-let lyrics = [];
-let timestamps = [];
+let meta = {}
+let lyrics = []
+let timestamps = []
 
 // + chatgpt did the loading thing it sucks really
 async function loadLyrics() {
@@ -29,13 +30,27 @@ async function loadTimestamps() {
 		return null;  // In case of error, return null or handle as needed
 	}
 }
-// -
+
+async function loadMeta() {
+	try {
+		const response = await fetch("meta.json");
+		const meta = await response.json();
+		document.getElementById('track-title').innerText = meta["title"] || "Track Title"
+		document.getElementById('artist-name').innerText = meta["artist"] || "Artist"
+		document.getElementById('duration').innerText = meta["length"] || "0:00"
+		return meta;  // Return the timestamps array
+	} catch (error) {
+		console.error("Error loading metadata:", error);
+		return null;
+	}
+}
+
 
 async function main() {
 	console.log("main();");
 
 	// Wait for both loadLyrics and loadTimestamps to complete
-	[lyrics, timestamps] = await Promise.all([loadLyrics(), loadTimestamps()]);
+	[lyrics, timestamps, meta] = await Promise.all([loadLyrics(), loadTimestamps(), loadMeta()]);
 
 	// Check if both data are available before logging them
 	if (lyrics && timestamps) {
@@ -63,8 +78,11 @@ async function main() {
 }
 
 
+function buttonPrev() {
+	audioElement.currentTime = 0
+}
 
-function audioStart() {
+function buttonPlay() {
 	var promise = audioElement.play();
 
 	if (promise !== undefined) {
@@ -109,6 +127,10 @@ function onAudioTimeUpdate() {
 	if (lyricElement) {
 		//lyricElement.scrollIntoView() // TODO: doesn't only do it in the div
 	}
+
+	const minutes = Math.floor(currentTime / 60);
+	const secs = Math.floor(currentTime % 60);
+	document.getElementById('current-time').innerText = `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
 }
 
 audioElement.addEventListener("timeupdate", onAudioTimeUpdate);
@@ -126,6 +148,21 @@ function switchTheme(theme) {
 	const themeLink = document.getElementById("theme-style");
 	localStorage.setItem("theme", theme)
 	themeText.innerText = theme
+
+	// brighten up the button of the current theme
+	const themeButtonDiv = document.querySelector('.theme-button');
+	const buttons = themeButtonDiv.querySelectorAll('button')
+	Array.from(buttons).forEach(element => {
+		element.classList.remove("active-theme-button")
+	});
+	const button = Array.from(buttons).find(button => {
+		return button.innerText.trim().toLowerCase() === theme.trim().toLowerCase();
+	});
+	if (button) {
+		button.classList.add("active-theme-button")
+	}
+
+	// actually set the theme
 	themeLink.href = `styles/${theme}.css`
 	return
 }
