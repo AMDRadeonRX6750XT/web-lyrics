@@ -207,6 +207,7 @@ function removeData() {
 			});
 		});
 	}
+	alert("Data deleted.") // this might run before actually deleting the data..?
 }
 // -- removeData();
 
