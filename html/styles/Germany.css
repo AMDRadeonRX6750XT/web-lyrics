@@ -1,0 +1,15 @@
+/* German flag theme */
+:root {
+	--primary-bg: #000000; /* Black */
+	--secondary-bg: #222222; /* Dark black for slight contrast */
+	--text-color: #ffffff; /* White for readability */
+	--lyrics-color-past: #737373; /* Red for past lyrics */
+	--lyrics-color-future: #b5b5b5; /* Yellow for future lyrics */
+	--highlight-color: #FF0000; /* Red for highlights */
+	--button-bg: #FFD700; /* Yellow for buttons */
+	--button-hover-bg: #FFCC00; /* Slightly darker yellow for hover */
+	--button-active-bg: #FF0000; /* Red for active buttons */
+	--scrollbar-bg: #000000; /* Black for scrollbar */
+	--scrollbar-thumb-bg: #444444; /* Dark gray for thumb */
+	--scrollbar-thumb-hover-bg: #FFD700; /* Yellow for hover thumb */
+}
