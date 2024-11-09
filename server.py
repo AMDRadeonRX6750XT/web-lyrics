@@ -1,9 +1,39 @@
 # Made by ChatGPT so that the sound streams properly
 
-from flask import Flask, send_from_directory, request, Response
+from flask import Flask, send_from_directory, request, Response, jsonify
 import os
+import json
 
 app = Flask(__name__)
+
+# Dictionary to store {title: id} mappings
+songs_list = {}
+
+def load_songs_metadata():
+	"""Load song metadata from html/songs/ and populate songs_list dictionary."""
+	songs_dir = os.path.join(os.getcwd(), "html", "songs")
+	
+	for song_id in os.listdir(songs_dir):
+		song_path = os.path.join(songs_dir, song_id)
+		
+		# Ensure it's a directory and contains a meta.json file
+		if os.path.isdir(song_path):
+			meta_path = os.path.join(song_path, "meta.json")
+			
+			if os.path.isfile(meta_path):
+				# Load the title from meta.json
+				with open(meta_path, 'r') as meta_file:
+					meta_data = json.load(meta_file)
+					title = meta_data.get("title")
+					
+					if title:
+						# Map the title to the song ID
+						songs_list[title] = song_id
+
+@app.route('/songs/list')
+def list_songs():
+	"""Endpoint to return the songs list as {title: id}."""
+	return jsonify(songs_list)
 
 @app.route('/', defaults={'filename': ''})
 @app.route('/<path:filename>')
@@ -49,5 +79,8 @@ def serve_audio(filename, directory):
 	# Default case: serve the entire audio file without byte-range handling
 	return send_from_directory(directory, filename)
 
+# Load metadata before starting the server
+load_songs_metadata()
+
 if __name__ == '__main__':
-	app.run(debug=True, host="0.0.0.0")#, threaded=True)
+	app.run(debug=True, host="0.0.0.0")  #, threaded=True)

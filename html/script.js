@@ -9,10 +9,21 @@ let meta = {}
 let lyrics = []
 let timestamps = []
 
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const songID = urlParams.get("id") || "0000" // always a string
+
+
+document.getElementById("song-source-main").src = `songs/${songID}/song.mp3`
+document.getElementById("track-cover").src = `songs/${songID}/cover`
+audioElement.load()
+
+
 // + chatgpt did the loading thing it sucks really
 async function loadLyrics() {
 	try {
-		const response = await fetch("lyrics.json");
+		const response = await fetch(`songs/${songID}/lyrics.json`);
 		const lyrics = await response.json();
 		return lyrics;  // Return the lyrics data
 	} catch (error) {
@@ -22,7 +33,7 @@ async function loadLyrics() {
 }
 async function loadTimestamps() {
 	try {
-		const response = await fetch("timestamps.json");
+		const response = await fetch(`songs/${songID}/timestamps.json`);
 		const timestamps = await response.json();  // Expecting an array of numbers
 		return timestamps;  // Return the timestamps array
 	} catch (error) {
@@ -33,7 +44,7 @@ async function loadTimestamps() {
 
 async function loadMeta() {
 	try {
-		const response = await fetch("meta.json");
+		const response = await fetch(`songs/${songID}/meta.json`);
 		const meta = await response.json();
 		document.getElementById('track-title').innerText = meta["title"] || "Track Title"
 		document.getElementById('artist-name').innerText = meta["artist"] || "Artist"
