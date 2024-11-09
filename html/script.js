@@ -94,6 +94,7 @@ async function main() {
 		//p.style = "margin: 0;"
 		p.addEventListener("click", (event) => {
 			audioElement.currentTime = timestamps[Number(p.getAttribute("id_int"))];
+			audioElement.play() // just to make sure it doesn't stay paused in case it is
 		})
 		div.append(p);
 		i++;
