@@ -1,0 +1,93 @@
+/* Gangster theme - by chatgpt */
+:root {
+	--primary-bg: #1a1a1a; /* deep black for a gritty background */
+	--secondary-bg: #2b2b2b; /* dark gray for contrast */
+	--text-color: #e6e6e6; /* light gray for readability */
+	--lyrics-color-past: #3a3a3a; /* muted dark for past lyrics */
+	--lyrics-color-future: #757575; /* subtle gray for future lyrics */
+	--highlight-color: #d4af37; /* muted gold for a classic vibe */
+	--button-bg: #2e2e2e; /* dark gray for button background */
+	--button-hover-bg: #4a4a4a; /* lighter gray on hover */
+	--button-active-bg: #1f1f1f; /* darker shade for active state */
+	--scrollbar-bg: #000000; /* pure black for the scrollbar */
+	--scrollbar-thumb-bg: #333333; /* deep gray thumb */
+	--scrollbar-thumb-hover-bg: #555555; /* lighter gray thumb on hover */
+	--accent-color: #8b0000; /* dark crimson for accents (optional) */
+	--border-color: #505050; /* medium gray border color for a structured feel */
+}
+
+/* Additional styling for a gangster theme */
+body {
+	background-color: var(--primary-bg);
+	color: var(--text-color);
+	font-family: "Cinzel", serif; /* classic, vintage-style font */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--highlight-color);
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+button {
+	background-color: var(--button-bg);
+	color: var(--text-color);
+	border: 1px solid var(--border-color);
+	transition: background-color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+	background-color: var(--button-hover-bg);
+	border-color: var(--highlight-color);
+}
+
+button:active {
+	background-color: var(--button-active-bg);
+	border-color: var(--accent-color);
+}
+
+a {
+	color: var(--highlight-color);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--accent-color);
+	text-decoration: underline;
+}
+
+.scrollbar {
+	background-color: var(--scrollbar-bg);
+}
+
+.scrollbar-thumb {
+	background-color: var(--scrollbar-thumb-bg);
+	transition: background-color 0.3s;
+}
+
+.scrollbar-thumb:hover {
+	background-color: var(--scrollbar-thumb-hover-bg);
+}
+
+/* Optional styling for lyrics */
+.lyrics-past {
+	color: var(--lyrics-color-past);
+	font-style: italic; /* doesn't work for some reason */
+}
+
+.lyrics-current {
+	color: var(--text-color);
+	font-weight: bold;
+}
+
+.lyrics-future {
+	color: var(--lyrics-color-future);
+}
+
+/* Optional styling for borders and headers */
+.header, .footer {
+	background-color: var(--secondary-bg);
+	border-top: 2px solid var(--highlight-color);
+	padding: 10px;
+	color: var(--text-color);
+}
