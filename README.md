@@ -17,7 +17,7 @@ python -m pip install Flask
 # Todo
 - [ ] toggle showing theme options
 - [ ] scroll div automatically to lyrics dynamically
-- [ ] song selection
+- [x] song selection
 - [ ] accessibility
 - [ ] screenshots for readme
 - [ ] space theme (with shooting stars)
