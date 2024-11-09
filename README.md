@@ -22,6 +22,7 @@ python -m pip install Flask
 - [ ] accessibility
 - [ ] screenshots for readme
 - [ ] space theme (with shooting stars)
+- [ ] documentation
 - [x] song selection
 - [x] skip to time when clicking on lyrics
 - [x] proper mobile support
