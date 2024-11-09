@@ -245,6 +245,9 @@ h1 {
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
 }
+.lyrics_text:hover {
+	text-decoration: underline;
+}
 
 .lyrics_text.past {
 	color: var(--lyrics-color-past);
