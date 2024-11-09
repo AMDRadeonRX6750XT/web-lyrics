@@ -252,7 +252,7 @@ h1 {
 
 .lyrics_text.current {
 	color: var(--text-color);
-	transform: scale(1.1); /* Scales the element 1.5 times its original size */
+	transform: scale(1.1);
 	/*transition: transform 1s ease-in-out; /* Optional: Adds smooth transition */
 }
 
