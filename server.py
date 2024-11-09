@@ -22,7 +22,7 @@ def load_songs_metadata():
 			
 			if os.path.isfile(meta_path):
 				# Load the title from meta.json
-				with open(meta_path, 'r') as meta_file:
+				with open(meta_path, 'r', encoding='utf-8') as meta_file:
 					meta_data = json.load(meta_file)
 					title = meta_data.get("title")
 					
