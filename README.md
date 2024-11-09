@@ -16,11 +16,13 @@ python -m pip install Flask
 
 # Todo
 - [ ] toggle showing theme options
+- [ ] working player bar
+- [ ] volume controls
 - [ ] scroll div automatically to lyrics dynamically
-- [x] song selection
 - [ ] accessibility
 - [ ] screenshots for readme
 - [ ] space theme (with shooting stars)
+- [x] song selection
 - [x] skip to time when clicking on lyrics
 - [x] proper mobile support
 
