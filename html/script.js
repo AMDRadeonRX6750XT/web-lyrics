@@ -98,6 +98,8 @@ async function main() {
 		div.append(p);
 		i++;
 	});
+	audioElement.currentTime = 0.1
+	audioElement.currentTime = 0
 }
 
 
@@ -130,7 +132,7 @@ function onAudioTimeUpdate() {
 
 	let currentTimestamp = -1;
 	let index = -1;
-	while (currentTimestamp < currentTime) {
+	while (currentTimestamp <= currentTime) {
 		index++;
 		currentTimestamp = timestamps[index]
 	}
@@ -146,11 +148,15 @@ function onAudioTimeUpdate() {
 	}
 	for (let i = index; i < lyrics.length; i++) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
-		lyricElement.classList.add("future");
+		if (lyricElement) {
+			lyricElement.classList.add("future");
+		}
 	}
 	var lyricElement = document.getElementById(`lyrics_text-${index}`);
-	lyricElement.classList.remove("past", "current", "future");
-	lyricElement.classList.add("current");
+	if (lyricElement) {
+		lyricElement.classList.remove("past", "current", "future");
+		lyricElement.classList.add("current");
+	}
 	
 	var lyricElement = document.getElementById(`lyrics_text-${index - 2}`);
 	if (lyricElement) {
