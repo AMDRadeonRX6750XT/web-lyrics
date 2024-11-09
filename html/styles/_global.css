@@ -135,7 +135,7 @@ h1 {
 	gap: 10px;
 }
 
-.track-cover {
+#track-cover {
 	width: 130px;
 	height: 130px;
 	background-color: var(--primary-bg);

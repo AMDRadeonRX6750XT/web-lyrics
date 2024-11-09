@@ -5,9 +5,12 @@ const audioElement = document.getElementById('audio_song')
 const cookieConsent = document.getElementById('cookie_consent')
 const themeText = document.getElementById('theme-text')
 
+// some global values (i hate javascript)
 let meta = {}
 let lyrics = []
 let timestamps = []
+let songIDs = Object.values({})
+let currentSongIndex = 0
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -23,52 +26,61 @@ audioElement.load()
 // + chatgpt did the loading thing it sucks really
 async function loadLyrics() {
 	try {
-		const response = await fetch(`songs/${songID}/lyrics.json`);
+		const response = await fetch(`/songs/${songID}/lyrics.json`);
 		const lyrics = await response.json();
 		return lyrics;  // Return the lyrics data
 	} catch (error) {
 		console.error("Error loading lyrics:", error);
-		return null;  // In case of error, return null or handle as needed
+		return [];
 	}
 }
 async function loadTimestamps() {
 	try {
-		const response = await fetch(`songs/${songID}/timestamps.json`);
+		const response = await fetch(`/songs/${songID}/timestamps.json`);
 		const timestamps = await response.json();  // Expecting an array of numbers
 		return timestamps;  // Return the timestamps array
 	} catch (error) {
 		console.error("Error loading timestamps:", error);
-		return null;  // In case of error, return null or handle as needed
+		return [];
 	}
 }
-
 async function loadMeta() {
 	try {
-		const response = await fetch(`songs/${songID}/meta.json`);
+		const response = await fetch(`/songs/${songID}/meta.json`);
 		const meta = await response.json();
-		document.getElementById('track-title').innerText = meta["title"] || "Track Title"
-		document.getElementById('artist-name').innerText = meta["artist"] || "Artist"
-		document.getElementById('duration').innerText = meta["length"] || "0:00"
-		return meta;  // Return the timestamps array
+		document.getElementById("track-title").innerText = meta["title"] || "Track Title"
+		document.getElementById("artist-name").innerText = meta["artist"] || "Artist"
+		document.getElementById("duration").innerText = meta["length"] || "0:00"
+		return meta;
 	} catch (error) {
 		console.error("Error loading metadata:", error);
-		return null;
+		return {"title": "Error", "artist": "Error", "duration": "Error"};
 	}
 }
 
 
 async function main() {
-	console.log("main();");
+	console.log("main();")
 
-	// Wait for both loadLyrics and loadTimestamps to complete
-	[lyrics, timestamps, meta] = await Promise.all([loadLyrics(), loadTimestamps(), loadMeta()]);
+	let songs = await fetchSongs()
+	songIDs = songs.map(obj => Object.values(obj)[1])
+	console.log(songIDs) // DONT REMOVE - this only works if this line is here
+	currentSongIndex = songIDs.indexOf(songID)
+	console.log(currentSongIndex) // DONT REMOVE - this only works if this line is here
+
+	// don't ask me why it doesn't work anymore
+	// [lyrics, timestamps, meta] = await Promise.all([loadLyrics(), loadTimestamps(), loadMeta()]);
+
+	lyrics = await loadLyrics()
+	timestamps = await loadTimestamps()
+	meta = await loadMeta()
 
 	// Check if both data are available before logging them
-	if (lyrics && timestamps) {
-		console.log("Loaded data successfully.")
+	if (lyrics && timestamps && meta) {
+		console.log("Loaded song data successfully.")
 		//console.log("Timestamps:", timestamps);
 	} else {
-		console.log("Failed to load data.");
+		console.warn("Failed to load song data.");
 	}
 	
 	let div = document.querySelector(".lyrics_box")
@@ -89,9 +101,7 @@ async function main() {
 }
 
 
-function buttonPrev() {
-	audioElement.currentTime = 0
-}
+
 
 let playing = false;
 const playButton = document.getElementById("play-btn")
@@ -223,8 +233,8 @@ function removeData() {
 // -- removeData();
 
 
-// ++ song selection pop up
-async function showSongList() {
+// ++ song selection 
+async function fetchSongs() {
 	try {
 		const response = await fetch("/songs/list");
 		const songsData = await response.json();
@@ -233,8 +243,19 @@ async function showSongList() {
 		for (const [title, id] of Object.entries(songsData)) {
 			songs.push({ title, id });
 		}
-		songs.sort((a, b) => a.id.localeCompare(b.id));
 
+		songs.sort((a, b) => a.id.localeCompare(b.id));
+		return songs;
+	} catch (error) {
+		console.error("Error fetching song list:", error);
+		return [];
+	}
+}
+
+// pop up
+async function showSongList() {
+	try {
+		const songs = await fetchSongs();
 		const songListContainer = document.getElementById("songListContainer");
 		songListContainer.innerHTML = "";
 
@@ -251,10 +272,11 @@ async function showSongList() {
 
 		songListContainer.appendChild(list);
 
+		// Show popup and overlay
 		document.getElementById("popupDiv").style.display = "block";
 		document.getElementById("overlay").style.display = "block";
 	} catch (error) {
-		console.error("Error fetching song list:", error);
+		console.error("Error displaying song list:", error);
 	}
 }
 
@@ -265,16 +287,33 @@ function closePopup() {
 
 // -- song selection pop up
 
-main();
 
+// ++ next/prev buttons
+function buttonPrev() {
+	if ( 3 < audioElement.currentTime) {
+		audioElement.currentTime = 0
+		return
+	}
+	currentSongIndex = (currentSongIndex - 1 + songIDs.length) % songIDs.length
+	const prevSongID = songIDs[currentSongIndex]
+	window.location.href = `/?id=${prevSongID}`
+}
+function buttonNext() {
+	currentSongIndex = (currentSongIndex + 1) % songIDs.length
+	const nextSongID = songIDs[currentSongIndex]
+	window.location.href = `/?id=${nextSongID}`
+}
+// -- next/prev buttons
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
 	if (localStorage.getItem("cookieConsent") !== "yes") {
-		window.location.pathname = "/cookie.html";
+		window.location.href = "/cookie.html"
 	} else {
 		// cookie consented.
 		switchTheme(localStorage.getItem("theme"))
 	}
-});
+})
 
+
+main();

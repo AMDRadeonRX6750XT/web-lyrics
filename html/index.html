@@ -49,13 +49,13 @@
 
 	<!-- Audio being loaded in the background-->
 	<audio preload="auto" id="audio_song">
-		<source src="/songs/0000/song.mp3" type="audio/mpeg" id="song-source-main">
+		<source src="" type="audio/mpeg" id="song-source-main">
 		Your browser does not support the audio element.
 	</audio>
 	<!-- Centered Music Player Section -->
 	<div class="music-player">
 		<div class="track-info">
-			<img src="/songs/0000/cover" alt="Track Cover" class="track-cover" id="track-cover">
+			<img src="" alt="Track Cover" id="track-cover">
 			<div class="track-details">
 				<h2 id="track-title">Track Title</h2> <br>
 				<h3 id="artist-name">Artist Name</h3>
@@ -65,7 +65,7 @@
 		<div class="player-controls">
 			<button class="prev-btn" onclick="buttonPrev()">&#10094;</button>
 			<button id="play-btn" onclick="buttonPlay()">&#9658;</button>
-			<button class="next-btn" onclick="buttonPrev()">&#10095;</button>
+			<button class="next-btn" onclick="buttonNext()">&#10095;</button>
 		</div>
 		<!-- IDs are unique -->
 		<div class="progress-bar">
