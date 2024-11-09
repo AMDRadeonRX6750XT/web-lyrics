@@ -31,7 +31,7 @@ async function loadLyrics() {
 		return lyrics;  // Return the lyrics data
 	} catch (error) {
 		console.error("Error loading lyrics:", error);
-		return [];
+		return ["Error loading lyrics"];
 	}
 }
 async function loadTimestamps() {
@@ -41,7 +41,7 @@ async function loadTimestamps() {
 		return timestamps;  // Return the timestamps array
 	} catch (error) {
 		console.error("Error loading timestamps:", error);
-		return [];
+		return [0];
 	}
 }
 async function loadMeta() {
