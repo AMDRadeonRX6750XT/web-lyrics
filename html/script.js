@@ -222,6 +222,43 @@ function removeData() {
 }
 // -- removeData();
 
+
+// ++ song selection pop up
+async function showSongList() {
+	try {
+		const response = await fetch("/songs/list");
+		const songs = await response.json();
+
+		const songListContainer = document.getElementById("songListContainer");
+		songListContainer.innerHTML = "";
+		
+		const list = document.createElement("ul");
+		for (const [title, id] of Object.entries(songs)) {
+			const listItem = document.createElement("li");
+			const link = document.createElement("a");
+			link.href = `/?id=${id}`;
+			link.textContent = title;
+			
+			listItem.appendChild(link);
+			list.appendChild(listItem);
+		}
+		songListContainer.appendChild(list);
+
+		// Show the popup
+		document.getElementById("popupDiv").style.display = "block";
+		document.getElementById("overlay").style.display = "block";
+	} catch (error) {
+		console.error('Error fetching song list:', error);
+	}
+}
+
+function closePopup() {
+	document.getElementById('popupDiv').style.display = 'none';
+	document.getElementById('overlay').style.display = 'none';
+}
+
+// -- song selection pop up
+
 main();
 
 

@@ -5,18 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="/favicon.ico">
 	<link rel="stylesheet" href="styles/_global.css"> <!-- global/root theme -->
-	<link rel="stylesheet" href="" id="theme-style"> <!-- to be filled in by javascript -->
+	<link rel="stylesheet" href="" id="theme-style">  <!-- to be filled in by javascript -->
 	<title>WebLyrics ♪</title>
 </head>
 <body>
 	<!-- https://github.com/AMDRadeonRX6750XT/web-lyrics -->
+	<!-- Title & Github Repo -->
 	<div id="main-container">
 	<h1>
 		<span>WebLyrics <sup>♪</sup></span>
 		<a href="https://github.com/AMDRadeonRX6750XT/web-lyrics" target="_blank" rel="noopener noreferrer" class="links">GitHub</a>
 	</h1>
 
-	<!--<button onclick="audioStart();">Start music (may be loud)</button>-->
+	<!-- Theme selection -->
 	<div class="theme-button">
 		<button onclick="switchTheme('Light')">Light</button>
 		<button onclick="switchTheme('Dark')">Dark</button>
@@ -38,6 +39,15 @@
 		</h2>
 	</div>
 
+	<!-- Song Selection -->
+	<button onclick="showSongList()">Show Songs</button>
+	<div id="overlay" onclick="closePopup()"></div>
+	<div id="popupDiv">
+		<button onclick="closePopup()">Close</button>
+		<div id="songListContainer"></div>
+	</div>
+
+	<!-- Audio being loaded in the background-->
 	<audio preload="auto" id="audio_song">
 		<source src="/songs/0000/song.mp3" type="audio/mpeg" id="song-source-main">
 		Your browser does not support the audio element.
@@ -72,13 +82,17 @@
 	</noscript>
 
 	<div class="lyrics_box" id="lyrics_box"></div>
+
+	<!-- License & Data removal button -->
 	<br><br>
 	<h2>
 		<a href="https://github.com/AMDRadeonRX6750XT/web-lyrics?tab=GPL-3.0-1-ov-file" target="_blank" rel="noopener noreferrer" class="links">License</a>
 	</h2>
 	<button onclick="removeData()">Delete cookies</button>
+
 </div>
 
+<!-- Script loads after everything else -->
 <script src="/script.js"></script>
 </body>
 </html>
