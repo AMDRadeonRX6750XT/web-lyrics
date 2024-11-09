@@ -88,6 +88,7 @@ button {
 .current-theme-indicator {
 	-webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: var(--lyrics-color-past); /* other variable? */
+	/*float: left; /* error: when enabled the player moves to the left aswell? */
 }
 
 .theme-button {
