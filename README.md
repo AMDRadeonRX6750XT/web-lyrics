@@ -23,6 +23,7 @@ python -m pip install Flask
 - [ ] screenshots for readme
 - [ ] space theme (with shooting stars)
 - [ ] documentation
+- [ ] tool to assist with syncing lyrics
 - [x] song selection
 - [x] skip to time when clicking on lyrics
 - [x] proper mobile support
