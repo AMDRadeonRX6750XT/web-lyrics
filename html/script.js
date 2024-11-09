@@ -71,14 +71,12 @@ async function main() {
 	// don't ask me why it doesn't work anymore
 	// [lyrics, timestamps, meta] = await Promise.all([loadLyrics(), loadTimestamps(), loadMeta()]);
 
-	lyrics = await loadLyrics()
+	lyrics     = await loadLyrics()
 	timestamps = await loadTimestamps()
-	meta = await loadMeta()
+	meta       = await loadMeta()
 
-	// Check if both data are available before logging them
 	if (lyrics && timestamps && meta) {
 		console.log("Loaded song data successfully.")
-		//console.log("Timestamps:", timestamps);
 	} else {
 		console.warn("Failed to load song data.");
 	}
@@ -99,7 +97,6 @@ async function main() {
 		div.append(p);
 		i++;
 	});
-	audioElement.currentTime = 0.1
 	audioElement.currentTime = 0
 }
 
@@ -108,7 +105,7 @@ async function main() {
 
 let playing = false;
 const playButton = document.getElementById("play-btn")
-function buttonPlay() { // when space pressed!
+function buttonPlay() { // when space pressed
 	if (playing) { // pause
 		playing = false
 		var promise = audioElement.pause();
@@ -129,7 +126,6 @@ function buttonPlay() { // when space pressed!
 
 function onAudioTimeUpdate() {
 	const currentTime = audioElement.currentTime;
-	//console.log("song time:", currentTime);
 
 	let currentTimestamp = -1;
 	let index = -1;
@@ -139,6 +135,8 @@ function onAudioTimeUpdate() {
 	}
 	index-- // idk why but it works so
 	//console.log(index, currentTime)
+
+	// TODO: optimize so it checks for classes before
 	for (let i = 0; i < lyrics.length; i++) {
 		var lyricElement = document.getElementById(`lyrics_text-${i}`);
 		lyricElement.classList.remove("past", "current", "future");
@@ -166,7 +164,7 @@ function onAudioTimeUpdate() {
 
 	const minutes = Math.floor(currentTime / 60);
 	const secs = Math.floor(currentTime % 60);
-	document.getElementById('current-time').innerText = `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+	document.getElementById("current-time").innerText = `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
 }
 
 audioElement.addEventListener("timeupdate", onAudioTimeUpdate);
@@ -228,7 +226,7 @@ function removeData() {
 			window.indexedDB.deleteDatabase(db.name);
 		});
 	});
-	if ('caches' in window) {
+	if ("caches" in window) {
 		caches.keys().then(cacheNames => {
 			cacheNames.forEach(cacheName => {
 				caches.delete(cacheName);
@@ -311,6 +309,16 @@ function buttonNext() {
 	window.location.href = `/?id=${nextSongID}`
 }
 // -- next/prev buttons
+
+
+// keyboard stuff
+document.addEventListener("keydown", function(event) {
+	console.log(event.code)
+	if (event.code === "Space") {
+		event.preventDefault()
+		buttonPlay()
+	}
+});
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
