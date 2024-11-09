@@ -227,34 +227,40 @@ function removeData() {
 async function showSongList() {
 	try {
 		const response = await fetch("/songs/list");
-		const songs = await response.json();
+		const songsData = await response.json();
+
+		let songs = [];
+		for (const [title, id] of Object.entries(songsData)) {
+			songs.push({ title, id });
+		}
+		songs.sort((a, b) => a.id.localeCompare(b.id));
 
 		const songListContainer = document.getElementById("songListContainer");
 		songListContainer.innerHTML = "";
-		
+
 		const list = document.createElement("ul");
-		for (const [title, id] of Object.entries(songs)) {
+		for (const song of songs) {
 			const listItem = document.createElement("li");
 			const link = document.createElement("a");
-			link.href = `/?id=${id}`;
-			link.textContent = title;
+			link.href = `/?id=${song.id}`;
+			link.innerHTML = `<h3>${song.title}</h3>`;
 			
 			listItem.appendChild(link);
 			list.appendChild(listItem);
 		}
+
 		songListContainer.appendChild(list);
 
-		// Show the popup
 		document.getElementById("popupDiv").style.display = "block";
 		document.getElementById("overlay").style.display = "block";
 	} catch (error) {
-		console.error('Error fetching song list:', error);
+		console.error("Error fetching song list:", error);
 	}
 }
 
 function closePopup() {
-	document.getElementById('popupDiv').style.display = 'none';
-	document.getElementById('overlay').style.display = 'none';
+	document.getElementById("popupDiv").style.display = "none";
+	document.getElementById("overlay").style.display = "none";
 }
 
 // -- song selection pop up
