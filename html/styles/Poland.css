@@ -1,0 +1,15 @@
+/* Dark Poland-inspired theme - by chatgpt */
+:root {
+	--primary-bg: #1a1a1a;          /* Dark gray for main background */
+	--secondary-bg: #2e2e2e;        /* Slightly lighter gray for contrast */
+	--text-color: #ffffff;          /* White text for high contrast on dark background */
+	--lyrics-color-past: #555555;   /* Darker gray for past lyrics */
+	--lyrics-color-future: #888888; /* Medium gray for future lyrics */
+	--highlight-color: #d62828;     /* Bright red for highlights and accents */
+	--button-bg: #2e2e2e;           /* Dark gray for buttons */
+	--button-hover-bg: #3c3c3c;     /* Slightly lighter gray on hover */
+	--button-active-bg: #4a4a4a;    /* Darker gray for active button state */
+	--scrollbar-bg: #1a1a1a;        /* Dark background for scrollbar track */
+	--scrollbar-thumb-bg: #d62828;  /* Red for scrollbar thumb */
+	--scrollbar-thumb-hover-bg: #a71d1d; /* Darker red for thumb hover */
+}
