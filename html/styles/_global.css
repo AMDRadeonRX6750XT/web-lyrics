@@ -227,6 +227,7 @@ h1 {
 	margin-top: 5%;
 	background-color: rgba(0, 0, 0, 0.5);
 	color: var(--text-color);
+	overflow-x: hidden;
 	overflow-y: scroll;
 	scroll-behavior: smooth;
 	padding: 20px;
@@ -251,7 +252,8 @@ h1 {
 
 .lyrics_text.current {
 	color: var(--text-color);
-	/*font-size: 1.4em;*/
+	transform: scale(1.1); /* Scales the element 1.5 times its original size */
+	/*transition: transform 1s ease-in-out; /* Optional: Adds smooth transition */
 }
 
 .lyrics_text.future {
