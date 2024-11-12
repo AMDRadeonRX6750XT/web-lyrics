@@ -18,12 +18,12 @@ python -m pip install Flask
 - [ ] toggle showing theme options
 - [ ] working player bar
 - [ ] volume controls
-- [ ] scroll div automatically to lyrics dynamically
 - [ ] accessibility
 - [ ] screenshots for readme
 - [ ] space theme (with shooting stars)
 - [ ] documentation
-- [ ] tool to assist with syncing lyrics
+- [ ] python tool to assist with syncing lyrics
+- [x] scroll div automatically to lyrics dynamically
 - [x] song selection
 - [x] skip to time when clicking on lyrics
 - [x] proper mobile support

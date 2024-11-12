@@ -159,14 +159,12 @@ function onAudioTimeUpdate() {
 		lyricElement.classList.add("current")
 	}
 	
-	// TODO: auto scroll
 	var lyricElement = document.getElementById(`lyrics_text-${index - 3}`)
 	if (lyricElement) {
-		/*
-		console.warn(lyricsBox.scrollHeight)
-		console.warn(lyricElement.offsetTop)
-		lyricsBox.scrollTop = lyricElement.offsetTop
-		*/
+		// weird but works
+		const originalScrollPosition = window.scrollY || document.documentElement.scrollTop
+		lyricElement.scrollIntoView()
+		window.scrollTo({ top: originalScrollPosition })
 	}
 
 	const minutes = Math.floor(currentTime / 60)
