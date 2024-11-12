@@ -6,6 +6,11 @@
 
 /* is this needed here? */
 /* template for themes, based on dark.css */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Lilita+One&family=Reenie+Beanie&display=swap');
+
+/* Base Variables for Colors */
+
 :root {
 	--primary-bg: #222222;
 	--secondary-bg: #252525;
@@ -26,7 +31,7 @@
 body {
 	background: linear-gradient(var(--primary-bg), var(--secondary-bg));
 	color: var(--text-color);
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Lexend', Arial, Helvetica, sans-serif;
 	display: flex;
 	justify-content: center;
 	align-items: start;
@@ -147,16 +152,19 @@ h1 {
 	color: var(--text-color);
 	font-size: 2.2em;
 	font-weight: bold;
-	margin: 0;
 }
 
 .artist-name {
 	color: var(--text-color);
-	margin: 0;
 }
 
 .music-player {
 	padding: 20px;
+	margin: 20px;
+
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .player-controls {
@@ -244,6 +252,7 @@ h1 {
 	user-select: none; /* Standard syntax */
 	-webkit-user-select: none; /* Safari */
 	-ms-user-select: none; /* IE 10 and IE 11 */
+	text-shadow: rgba(135,135,135,1) 0px 0px 24px;
 }
 .lyrics_text:hover {
 	text-decoration: underline;
@@ -252,12 +261,13 @@ h1 {
 .lyrics_text.past {
 	color: var(--lyrics-color-past);
 	filter: blur(2px);
+	text-shadow: rgba(135,135,135,1) 0px 0px 2px;
 }
 
 .lyrics_text.current {
 	color: var(--text-color);
 	transform: scale(1.1);
-	/*transition: transform 1s ease-in-out; /* Optional: Adds smooth transition */
+	text-shadow: rgb(198, 198, 198) 0px 0px 24px;	/*transition: transform 1s ease-in-out; /* Optional: Adds smooth transition */
 }
 
 .lyrics_text.future {
