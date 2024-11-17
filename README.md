@@ -21,6 +21,7 @@ python -m pip install Flask
 - [ ] accessibility
 - [ ] screenshots for readme
 - [ ] space theme (with shooting stars)
+- [ ] language selection
 - [ ] documentation
 - [ ] python tool to assist with syncing lyrics
 - [x] scroll div automatically to lyrics dynamically
